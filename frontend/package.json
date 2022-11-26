@@ -16,7 +16,11 @@
     "aos": "^2.3.4",
     "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
+<<<<<<< HEAD
     "chart.js": "^4.0.1",
+=======
+    "dotenv": "^16.0.3",
+>>>>>>> 665ae6c1e36336fb3086c55b5eb9dc2d03d7183f
     "font-awesome": "^4.7.0",
     "material-table": "^1.67.1",
     "react": "^18.2.0",
@@ -26,6 +30,11 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "recoil": "^0.7.6",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.2",
     "sweetalert2": "^11.6.14",
     "web-vitals": "^2.1.4"
   },
