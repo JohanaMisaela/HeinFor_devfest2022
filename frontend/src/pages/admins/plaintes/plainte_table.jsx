@@ -32,7 +32,8 @@ function Plainte_table() {
         { nom: 'Mario', date:'2022-07-07', quartier: 'Antrano', text: "Tokony anary po ny olona fa maloto be", type: "Polution de l'air" }
       ]
         return (
-            <div style={{ maxWidth: '100%' }}>
+            <div className="container p-3">
+                <div style={{ maxWidth: '100%' }} className='p-3'>
              <MaterialTable
                 columns={colums}
                 data={plaintes}
@@ -57,6 +58,7 @@ function Plainte_table() {
                     textAlign: "center"},
                   }}
               />
+            </div>
             </div>
           )
 }

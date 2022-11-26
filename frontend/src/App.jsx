@@ -5,6 +5,7 @@ import Dashboard from './pages/admins/Dashboard.jsx';
 import Login from './pages/all/auth/Login';
 import Register from './pages/all/auth/Register';
 import Event from './pages/admins/events/events_table';
+import User from './pages/admins/users/users_table';
 import Complaint from './pages/admins/plaintes/plainte_table';
 import AddComplaint from './pages/clients/complaints/complaint';
 import AddEvent from './components/admins/addEvent';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path="/events" element={<Event/>}/>
         <Route path="/complaints" element={<Complaint/>}/>
+        <Route path="/users" element={<User/>}/>
         <Route path="/complaints/add" element={<AddComplaint/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/addEvent" element={<AddEvent/>}/>
