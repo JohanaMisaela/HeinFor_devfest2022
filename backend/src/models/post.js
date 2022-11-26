@@ -16,7 +16,6 @@ const PostSchema = new mongoose.Schema(
     },
     text: {
       type: String,
-      trim: true,
       maxlength: 500,
     },
     quartier: {
@@ -31,9 +30,6 @@ const PostSchema = new mongoose.Schema(
     likes: {
       type: [String],
       required: true,
-    },
-    votes: {
-      type: [String],
     },
     comments: {
       type: [
