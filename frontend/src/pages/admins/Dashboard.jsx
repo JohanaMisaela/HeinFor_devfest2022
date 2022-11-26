@@ -5,7 +5,7 @@ function Dashboard() {
   return (
     <div>
       <Navbar />
-      Dashboard
+      d
     </div>
   )
 }
