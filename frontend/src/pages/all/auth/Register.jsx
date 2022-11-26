@@ -18,13 +18,13 @@ function Register() {
     const data = { name, firstname, sexe, quartier, email, pwd };
     //   console.log(data);
     const res = await axios({
-        method: 'POST',
-        url: `http://localhost:5000/api/user/signup`,
-        data: data,
-      })
-    console.log('data', res.data);
-    console.log('status', res.status);
-    
+      method: "POST",
+      url: `http://localhost:5000/api/user/signup`,
+      data: data,
+    });
+    console.log("data", res.data);
+    console.log("status", res.status);
+
     if (res.status === 201) {
       Swal.fire({
         icon: "success",
@@ -118,12 +118,12 @@ function Register() {
                           />
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <select
                             name="status"
                             type="email"
                             id="form2Example17"
-                            class="form-control form-control-lg"
+                            className="form-control form-control-lg"
                             value={sexe}
                             onChange={(e) => setSexe(e.target.value)}
                           >
