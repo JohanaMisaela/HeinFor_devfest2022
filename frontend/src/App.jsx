@@ -17,6 +17,7 @@ import axios from "axios";
 import { getUser } from "./actions/user.actions";
 import { UidContext } from "./utils/appContext";
 
+
 function App() {
   const [uid, setUid] = useState(null);
   const dispatch = useDispatch();

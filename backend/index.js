@@ -20,10 +20,10 @@ const corsOption = {
   credentials: true,
   allowedHeaders: ["sessionId", "content-type"],
   exposedHeaders: ["sessionId"],
-  methods: "GET,PUT,POST,PATCH,DELETE,HEAD",
+  methods: "*",
   prefLightContinue: false,
 };
-app.use(cors());
+app.use(cors(corsOption));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
