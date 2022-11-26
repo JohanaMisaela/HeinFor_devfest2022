@@ -8,7 +8,7 @@ import "./complaint.css";
 
 
 const Complaint = () => {
-
+    const posterId = "6382213e58e9b3fb1c608228";
     const [type, setType] = useState('Pollution terrestre');
     const [text, setText] = useState('Tena tokony akaty aminay nareo');
     const [quartier, setQuartier] = useState('Ambohibao');
@@ -17,27 +17,28 @@ const Complaint = () => {
     const handlesubmit = async(e) => {
         e.preventDefault();
         const complaints = {
+                          posterId,
                           type,
                           text,
                           quartier
         };
         console.log(complaints)
-        // const res = await axios.post('http://localhost:5000/api/plainte', complaints)
-        // .then((res)=>{
-        //   Swal.fire(
-        //     'Added successfully',
-        //     'Nice!!',
-        //     'success'
-        //   )
+        const res = await axios.post('http://localhost:5000/api/plainte', complaints)
+        .then((res)=>{
+          Swal.fire(
+            'Added successfully',
+            'Nice!!',
+            'success'
+          )
         //   navigate('/complaints')
-        // })
-        // .catch((err)=>{
-        //   Swal.fire({
-        //     icon: 'error',
-        //     title: 'aaaaaaaaaaaaaah',
-        //     text: 'Une erreur est survenue',
-        //   })
-        // })
+        })
+        .catch((err)=>{
+          Swal.fire({
+            icon: 'error',
+            title: 'aaaaaaaaaaaaaah',
+            text: 'Une erreur est survenue',
+          })
+        })
     }
   return (
     <><div className="mx-auto" style={{width: "700px"}}>
