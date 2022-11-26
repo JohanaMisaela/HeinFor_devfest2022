@@ -40,7 +40,7 @@ const UserSchema = new mongoose.Schema(
     },
     picture: {
       type: String,
-      default: "./images/profiles/noImage.png",
+      default: "../../../frontend/public/images/profiles/noImage.png",
     },
     bio: {
       type: String,
