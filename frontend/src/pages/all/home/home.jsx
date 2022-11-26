@@ -37,9 +37,8 @@ function App() {
         <a href="" className="logo">HeinFor</a>
         <ul>
             <li><a href="" class="active">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Register</a></li>
+            <li><a href="#sec">About</a></li>
+            <li><a href="">Contact</a></li>
         </ul>
     </header>
      </div>
@@ -53,7 +52,7 @@ function App() {
         <img src={ro} id="rocks"/>
         <img src={wa} id="water"/>
      </div>
-     <div className="sec" >
+     <div className="sec" id='sec'>
         <h2>Need to take rest , let's spend holydays together.</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 

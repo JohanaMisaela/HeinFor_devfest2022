@@ -8,18 +8,18 @@ function Register() {
   let [name, setName] = useState('')
   let [firstName, setFirstName] = useState('')
   let [quartier, setQuartier] = useState('')
-  let [sexe, setSexe] = useState(0)
-  let [password, setPassword] = useState()
-  let [password_confirmed, setPasswordConfirmed] = useState()
+  let [sexe, setSexe] = useState()
+  let [pwd , setpwd] = useState()
+  let [pwd_confirmed, setpwdConfirmed] = useState()
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data = { name, email, password, password_confirmed};
+    const data = { name, firstName,sexe,quartier ,email, pwd};
   //   console.log(data);
     const res = await axios({
         method: 'POST',
-        url: `http://localhost:8000/api/register`,
+        url: `http://localhost:8000/api/user/signup`,
         data: data,
       })
     console.log('data', res.data);
@@ -110,19 +110,19 @@ function Register() {
                     </div>
 
                     <div className="form-outline mb-4">
-                      <input name="password" type="password" id="form2Example27" 
+                      <input name="pwd" type="pwd" id="form2Example27" 
                       className="form-control form-control-lg" placeholder="Mot de passe"
                        required
-                       value={password}
-                       onChange={(e) => setPassword(e.target.value)}/>
+                       value={pwd}
+                       onChange={(e) => setpwd(e.target.value)}/>
                     </div>
   
                     <div className="form-outline mb-4">
-                      <input name="password" type="password" id="form2Example27" 
+                      <input name="pwd" type="pwd" id="form2Example27" 
                       className="form-control form-control-lg" placeholder="Confirmer votre mot de passe"
                        required
-                       value={password_confirmed}
-                       onChange={(e) => setPasswordConfirmed(e.target.value)}/>
+                       value={pwd_confirmed}
+                       onChange={(e) => setpwdConfirmed(e.target.value)}/>
                     </div>
 
                     <div className="pt-1 mb-4">
