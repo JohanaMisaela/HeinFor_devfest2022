@@ -19,10 +19,12 @@ function events_table() {
           <MaterialTable
             columns={colums}
             data={data}
-            title="Demo Title"
+            grouping={true}
+            title="Liste des evenements"
             options={{
               paging:true,
               pageSize:10,
+              grouping:true,
               pageSizeOptions:10,
               filtering: true,
               exportButton: true,
@@ -41,7 +43,6 @@ function events_table() {
               cellStyle: {textAlign:'center'},
               filterCellStyle: {
                 textAlign: "center"},
-              grouping: true,
               }}
           />
         </div>
