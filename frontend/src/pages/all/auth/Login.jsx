@@ -82,12 +82,12 @@ function Login() {
                              onChange={(e) => setPassword(e.target.value)}/>
                           </div>
         
-                            {/* <div className="pt-1 mb-4">
+                            <div className="pt-1 mb-4">
                               <button className="btn btn-dark btn-lg btn-block" type="submit" name="connect">Se connecter</button>
-                            </div> */}
-                          <div className="pt-1 mb-4">
-                              <a className="btn btn-dark btn-lg btn-block" href='/dashboard'>Se connecter</a>
                             </div>
+                          {/* <div className="pt-1 mb-4">
+                              <a className="btn btn-dark btn-lg btn-block" href='/dashboard'>Se connecter</a>
+                            </div> */}
 
                           <a className="small text-muted" href="#!">Mot de passe oublié?</a>
                           <p className="mb-5 pb-lg-2" style={{color: "#393f81"}}>Pas de compte?
