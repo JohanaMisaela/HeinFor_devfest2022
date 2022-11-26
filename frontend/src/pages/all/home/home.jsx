@@ -52,7 +52,7 @@ function App() {
         <img src={ro} id="rocks"/>
         <img src={wa} id="water"/>
      </div>
-     <div className="sec" id='sec'>
+     <div className="sec" >
         <h2>Need to take rest , let's spend holydays together.</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
