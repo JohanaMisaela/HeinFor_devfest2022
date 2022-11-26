@@ -7,8 +7,12 @@ router.get("/", postController.readPost);
 router.post("/", upload.single("file"), postController.createPost);
 router.put("/:id", postController.updatePost);
 router.delete("/:id", postController.deletePost);
+// like
 router.patch("/like-post/:id", postController.likePost);
 router.patch("/unlike-post/:id", postController.unlikePost);
+// follow
+router.patch("/follow-event/:id", postController.follow);
+router.patch("/unfollow-event/:id", postController.unfollow);
 
 // // commentaire
 router.patch("/comment-post/:id", postController.commentPost);

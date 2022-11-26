@@ -67,6 +67,7 @@ module.exports.updatePost = (req, res) => {
   const updatedRecord = {
     text: req.body.text,
     quartier: req.body.quartier,
+    type: req.body.type,
   };
 
   Post.findByIdAndUpdate(
@@ -97,24 +98,17 @@ module.exports.likePost = async (req, res) => {
     await Post.findByIdAndUpdate(
       req.params.id,
       {
-        $addToSet: { likers: req.body.id },
+        $addToSet: { likers: req.body.idLikerLiker },
       },
       { new: true }
-      //   (err, post) => {
-      //     if (err) return res.status(400).send(err);
-      //   }
     ).catch((err) => res.status(400).send(err));
 
     await User.findByIdAndUpdate(
-      req.body.idLiker,
+      req.body.idLikerLiker,
       {
         $addToSet: { likes: req.params.id },
       },
       { new: true }
-      //   (err, post) => {
-      //     if (!err) res.send(post);
-      //     else return res.status(400).send(err);
-      //   }
     )
       .then((post) => res.send(post))
       .catch((err) => res.status(400).send(err));
@@ -131,24 +125,17 @@ module.exports.unlikePost = async (req, res) => {
     await Post.findByIdAndUpdate(
       req.params.id,
       {
-        $pull: { likers: req.body.id },
+        $pull: { likers: req.body.idLiker },
       },
       { new: true }
-      //   (err, post) => {
-      //     if (err) return res.status(400).send(err);
-      //   }
     ).catch((err) => res.status(400).send(err));
 
     await User.findByIdAndUpdate(
-      req.body.id,
+      req.body.idLiker,
       {
-        $pull: { likers: req.params.id },
+        $pull: { likes: req.params.id },
       },
       { new: true }
-      //   (err, post) => {
-      //     if (!err) res.send(post);
-      //     else return res.status(400).send(err);
-      //   }
     )
       .then((post) => res.send(post))
       .catch((err) => res.status(400).send(err));
@@ -177,8 +164,8 @@ module.exports.commentPost = (req, res) => {
       },
       { new: true }
     )
-      .then((post) => res.send(post))
-      .catch((err) => res.status(400).send(err));
+      .then((post) => res.json({ post }))
+      .catch((err) => res.status(400).json({ err }));
   } catch (err) {
     return res.status(400).send(err);
   }
@@ -229,6 +216,61 @@ module.exports.deleteCommentPost = (req, res) => {
       .catch((err) => {
         res.status(400).send(err);
       });
+  } catch (err) {
+    return res.status(400).send(err);
+  }
+};
+
+// FOLLOW
+module.exports.follow = async (req, res) => {
+  if (!isValidObjectId(req.params.id))
+    return res.status(400).send("ID unknown : " + req.params.id);
+
+  try {
+    await Post.findByIdAndUpdate(
+      req.params.id,
+      {
+        $addToSet: { followers: req.body.idfollower },
+      },
+      { new: true }
+    ).catch((err) => res.status(400).send(err));
+
+    await User.findByIdAndUpdate(
+      req.body.idfollower,
+      {
+        $addToSet: { followed: req.params.id },
+      },
+      { new: true }
+    )
+      .then((post) => res.send(post))
+      .catch((err) => res.status(400).send(err));
+  } catch (err) {
+    return res.status(400).send(err);
+  }
+};
+
+module.exports.unfollow = async (req, res) => {
+  if (!isValidObjectId(req.params.id))
+    return res.status(400).send("ID unknown : " + req.params.id);
+
+  try {
+    await Post.findByIdAndUpdate(
+      req.params.id,
+      {
+        $pull: { followers: req.body.idfollower },
+      },
+      { new: true }
+    ).catch((err) => res.status(400).send(err));
+
+    await User.findByIdAndUpdate(
+      req.body.idfollower,
+      {
+        $pull: { followed: req.params.id },
+      },
+      { new: true }
+    )
+      .then((post) => res.send(post))
+      .catch((err) => res.status(400).send(err));
   } catch (err) {
     return res.status(400).send(err);
   }
