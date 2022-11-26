@@ -17,7 +17,7 @@ function Dashboard() {
       <AddPost/>
       <section className="light">
 	<div className="container py-2">
-		<div className="h1 text-center text-dark" id="pageHeaderTitle">Publications</div>
+		<div className="h1 text-center text-dark" id="pageHeaderTitle"></div>
 
 		<article className="postcard light blue">
 			<a className="postcard__img_link" href="#">

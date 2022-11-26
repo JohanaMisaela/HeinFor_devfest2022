@@ -64,6 +64,7 @@ const handlePicture = (e) => {
       };
 
   return (
+    <>
     <div className="card my-4 mycard mx-auto mt-5" data-aos="fade-up">
         <div className="card-header">
             <div className="row">
@@ -146,7 +147,7 @@ const handlePicture = (e) => {
             }
         </form>
     </div>
+    </>
   )
 }
-
 export default AddPost
