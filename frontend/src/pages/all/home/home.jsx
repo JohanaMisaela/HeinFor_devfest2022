@@ -55,7 +55,7 @@ function App() {
         <img src={wa} id="water" />
       </div>
       <div className="sec">
-        <h2>Need to take rest , let's spend holydays together.</h2>
+        <h2>Luttons contre la pollution.</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Assumenda, ducimus recusandae tenetur dolores culpa possimus?

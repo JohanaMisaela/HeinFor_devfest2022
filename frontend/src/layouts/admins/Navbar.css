@@ -2,7 +2,10 @@ body {
   background: #F9F8FD;
   font-family: "Lexend Exa", sans-serif;
 }
-
+#feuille{
+  background-image: url('./../../assets/forest.png');
+  background-size: cover;
+}
 nav {
   position: absolute;
   top: 15px;
@@ -14,6 +17,8 @@ nav {
   -webkit-animation: slide-in 1s ease-out;
           animation: slide-in 1s ease-out;
           margin-bottom: 50px;
+  box-shadow: #094b65;
+  background-color: #EBECF1;
 }
 
 ul {
@@ -34,7 +39,7 @@ ul li {
   transition: background 0.2s;
 }
 ul li a {
-  color: #2375D8;
+  color: #094b65;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.2s;
