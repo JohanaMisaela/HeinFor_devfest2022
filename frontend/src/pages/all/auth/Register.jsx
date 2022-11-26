@@ -6,7 +6,11 @@ import { useNavigate } from "react-router-dom";
 function Register() {
   let [email, setEmail] = useState("");
   let [name, setName] = useState("");
+<<<<<<< HEAD
   let [firstname, setFirstName] = useState("");
+=======
+  let [firstname, setFirstname] = useState("");
+>>>>>>> a9d24d069569ae2ff96b6cf6b8b6ef22859d4916
   let [quartier, setQuartier] = useState("");
   let [sexe, setSexe] = useState();
   let [pwd, setpwd] = useState();
@@ -18,14 +22,14 @@ function Register() {
     const data = { name, firstname, sexe, quartier, email, pwd };
     //   console.log(data);
     const res = await axios({
-      method: "POST",
-      url: `http://localhost:5000/api/user/signup`,
-      data: data,
-    });
-    console.log("data", res.data);
-    console.log("status", res.status);
+        method: 'POST',
+        url: `http://localhost:5000/api/user/signup`,
+        data: data,
+      })
+    console.log('data', res.data);
+    console.log('status', res.status);
+    
     if (res.status === 201) {
-      localStorage.setItem("id", JSON.stringify(res.data.data_id));
       Swal.fire({
         icon: "success",
         title: "Logged successfully",
@@ -101,7 +105,11 @@ function Register() {
                             placeholder="Prenom"
                             required
                             value={firstname}
+<<<<<<< HEAD
                             onChange={(e) => setFirstName(e.target.value)}
+=======
+                            onChange={(e) => setFirstname(e.target.value)}
+>>>>>>> a9d24d069569ae2ff96b6cf6b8b6ef22859d4916
                           />
                         </div>
 
