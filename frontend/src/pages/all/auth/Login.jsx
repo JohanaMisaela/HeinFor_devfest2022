@@ -12,16 +12,17 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data = { email, password };
-    //   console.log(data);
+    const data = { email, pwd:password };
+      console.log(data);
       const res = await axios({
           method: 'POST',
-          url: `http://localhost:8000/api/user/login`,
+          url: `http://localhost:5000/api/user/login`,
           data: data,
         })
+        console.log(data)
       console.log('data', res.data);
       console.log('status', res.status);
-      if (res.status === 201 ){
+      if (res.status === 20 ){
         localStorage.setItem('id', JSON.stringify(res.data.data_id))
         Swal.fire({
           icon: 'success',

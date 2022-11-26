@@ -1,10 +1,13 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/all/home/home';
 import Dashboard from './pages/admins/Dashboard.jsx';
 import Login from './pages/all/auth/Login';
 import Register from './pages/all/auth/Register';
 import Event from './pages/admins/events/events_table';
+import Complaint from './pages/admins/plaintes/plainte_table';
+import AddComplaint from './pages/clients/complaints/complaint';
+import AddEvent from './components/admins/addEvent';
 
 function App() {
   return (
