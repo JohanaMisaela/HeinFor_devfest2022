@@ -1,3 +1,4 @@
+const { isValidObjectId } = require("mongoose");
 const User = require("../models/User");
 
 const getAllUsers = async (req, res) => {
@@ -6,7 +7,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const getOneUser = async (req, res) => {
-  if (!ObjectId.isValid(req.params.id)) {
+  if (!isValidObjectId(req.params.id)) {
     return res.status(400).send("ID inconnu : " + req.params.id);
   }
   User.findById(req.params.id, (error, docs) => {
