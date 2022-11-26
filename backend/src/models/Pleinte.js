@@ -16,6 +16,9 @@ const PleinteSchema = new mongoose.Schema(
     status: {
       type: String,
     },
+    type: {
+      type: String,
+    },
     text: {
       type: String,
       maxlength: 500,
