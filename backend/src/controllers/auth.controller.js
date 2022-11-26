@@ -2,6 +2,7 @@ const User = require("../models/User");
 const { signUpErrors, signInErrors } = require("../utils/error.utils");
 const jwt = require("jsonwebtoken");
 const modelEmail = require("../mail/modelEmail");
+const { isValidObjectId } = require("mongoose");
 const maxAge = 3 * 24 * 60 * 60 * 1000;
 
 const createToken = (id) => {
@@ -27,7 +28,7 @@ module.exports.signUp = async (req, res) => {
   console.log(req.body);
   const { name, email, pwd, sexe, firstname, quartier } = req.body;
   try {
-    const user = await User.create({
+    const user = new User({
       name,
       email,
       pwd,
@@ -38,6 +39,7 @@ module.exports.signUp = async (req, res) => {
     await modelEmail({ account: true, name, email })
       .then((result) => {
         console.log(result);
+        user.save();
       })
       .catch((err) => {
         console.log(err);
@@ -46,20 +48,6 @@ module.exports.signUp = async (req, res) => {
   } catch (err) {
     const errors = signUpErrors(err);
     res.status(400).send({ err });
-  }
-};
-
-module.exports.deleteUser = async (req, res) => {
-  if (!ObjectId.isValid(req.params.id))
-    return res.status(400).send("ID unknown : " + req.params.id);
-
-  try {
-    await User.deleteOne({ _id: req.params.id }).exec();
-    res
-      .status(200)
-      .json({ message: req.params.id + "Was deleted successfilly." });
-  } catch (err) {
-    return res.status(500).json({ message: err });
   }
 };
 

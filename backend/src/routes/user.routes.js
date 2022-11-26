@@ -1,18 +1,18 @@
 const router = require("express").Router();
 const upload = require("multer")();
 
+const { signUp, signIn, logout } = require("../controllers/auth.controller");
 const {
-  signUp,
-  signIn,
-  logout,
+  getAllUsers,
+  getOneUser,
   deleteUser,
-} = require("../controllers/auth.controller");
-const { getAllUsers, getOneUser } = require("../controllers/user.controller");
+  updateUser,
+} = require("../controllers/user.controller");
 
 router.get("/getUsers", getAllUsers);
 router.get("/getUser/:id", getOneUser);
 router.delete("/deleteUser/:id", deleteUser);
-// router.put("/updateUser/:id", updateUser);
+router.put("/updateUser/:id", updateUser);
 // router.post("/uploadImage", upload.single("file"), profile);
 
 router.post("/signup", signUp);
