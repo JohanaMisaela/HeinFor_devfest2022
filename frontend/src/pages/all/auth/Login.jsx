@@ -16,7 +16,7 @@ function Login() {
     //   console.log(data);
       const res = await axios({
           method: 'POST',
-          url: `http://localhost:8000/api/user/login`,
+          url: `http://localhost:5000/api/user/login`,
           data: data,
         })
       console.log('data', res.data);
