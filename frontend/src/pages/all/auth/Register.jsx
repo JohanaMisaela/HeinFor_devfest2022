@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Register() {
   let [email, setEmail] = useState("");
   let [name, setName] = useState("");
-  let [firstName, setFirstName] = useState("");
+  let [firstname, setFirstname] = useState("");
   let [quartier, setQuartier] = useState("");
   let [sexe, setSexe] = useState();
   let [pwd, setpwd] = useState();
@@ -15,17 +15,17 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data = { name, firstName, sexe, quartier, email, pwd };
+    const data = { name, firstname, sexe, quartier, email, pwd };
     //   console.log(data);
     const res = await axios({
-      method: "POST",
-      url: `http://localhost:5000/api/user/signup`,
-      data: data,
-    });
-    console.log("data", res.data);
-    console.log("status", res.status);
+        method: 'POST',
+        url: `http://localhost:5000/api/user/signup`,
+        data: data,
+      })
+    console.log('data', res.data);
+    console.log('status', res.status);
+    
     if (res.status === 201) {
-      localStorage.setItem("id", JSON.stringify(res.data.data_id));
       Swal.fire({
         icon: "success",
         title: "Logged successfully",
@@ -100,8 +100,8 @@ function Register() {
                             className="form-control form-control-lg"
                             placeholder="Prenom"
                             required
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
+                            value={firstname}
+                            onChange={(e) => setFirstname(e.target.value)}
                           />
                         </div>
 

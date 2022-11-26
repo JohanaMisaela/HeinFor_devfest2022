@@ -14,34 +14,35 @@ function Login() {
 
     const data = { email, password };
     //   console.log(data);
-    const res = await axios({
-      method: "POST",
-      url: `http://localhost:5000/api/user/login`,
-      data: data,
-    });
-    console.log("data", res.data);
-    console.log("status", res.status);
-    if (res.status === 201) {
-      localStorage.setItem("id", JSON.stringify(res.data.data_id));
-      Swal.fire({
-        icon: "success",
-        title: "Logged successfully",
-        showConfirmButton: true,
-      });
-      navigate("/dashboard");
-    }
-    if (res.status === 200) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        // text: 'Bad credentials!',
-        text: res.data.message,
-      });
-    }
-  };
-
-  return (
-    <>
+      const res = await axios({
+          method: 'POST',
+          url: `http://localhost:5000/api/user/login`,
+          data: data,
+        })
+      console.log('data', res.data);
+      console.log('status', res.status);
+      if (res.status === 201 ){
+        localStorage.setItem('id', JSON.stringify(res.data.data_id))
+        Swal.fire({
+          icon: 'success',
+          title: 'Logged successfully',
+          showConfirmButton: true,
+        })
+        navigate('/dashboard');
+      }   
+      if (res.status === 200 ) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          // text: 'Bad credentials!',
+          text:res.data.message
+        })
+      }     
+  }
+  
+  
+    return (
+      <>
       <a href="/">Revenir</a>
       <form action="#" method="post" onSubmit={handleSubmit}>
         <div className="container py-5">
@@ -85,52 +86,34 @@ function Login() {
                             placeholder="Addresse email"
                             required
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                          />
-                        </div>
-
-                        <div className="form-outline mb-4">
-                          <input
-                            name="password"
-                            type="password"
-                            id="form2Example27"
-                            className="form-control form-control-lg"
-                            placeholder="Mot de passe"
-                            required
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                          />
-                        </div>
-
-                        {/* <div className="pt-1 mb-4">
+                            onChange={(e) => setEmail(e.target.value)}/>
+                          </div>
+        
+                          <div className="form-outline mb-4">
+                            <input name="password" type="password" id="form2Example27" 
+                            className="form-control form-control-lg" placeholder="Mot de passe"
+                             required
+                             value={password}
+                             onChange={(e) => setPassword(e.target.value)}/>
+                          </div>
+        
+                            {/* <div className="pt-1 mb-4">
                               <button className="btn btn-dark btn-lg btn-block" type="submit" name="connect">Se connecter</button>
+                            </div>
+                          {/* <div className="pt-1 mb-4">
+                              <a className="btn btn-dark btn-lg btn-block" href='/dashboard'>Se connecter</a>
                             </div> */}
-                        <div className="pt-1 mb-4">
-                          <button
-                            href="/dashboard"
-                            className="btn btn-dark btn-lg btn-block"
-                            type="submit"
-                            name="connect"
-                          >
-                            Se connecter
-                          </button>
+                          <div className="pt-1 mb-4">
+                            <button href='/dashboard' className="btn btn-dark btn-lg btn-block" type="submit" name="connect">Se connecter</button>
+                          </div>
+        
+                          <a className="small text-muted" href="#!">Mot de passe oublié?</a>
+                          <p className="mb-5 pb-lg-2" style={{color: "#393f81"}}>Pas de compte?
+                          <a href="/register" className="text-info">S'inscrire</a></p>
+                          <a href="#!" className="small text-muted">Bienvenu à ***** .</a>
+                          
                         </div>
-
-                        <a className="small text-muted" href="#!">
-                          Mot de passe oublié?
-                        </a>
-                        <p
-                          className="mb-5 pb-lg-2"
-                          style={{ color: "#393f81" }}
-                        >
-                          Pas de compte?
-                          <a href="/register" className="text-info">
-                            S'inscrire
-                          </a>
-                        </p>
-                        <a href="#!" className="small text-muted">
-                          Bienvenu à ***** .
-                        </a>
+        
                       </div>
                     </div>
                   </div>
@@ -138,10 +121,9 @@ function Login() {
               </div>
             </div>
           </div>
-        </div>
-      </form>
-    </>
-  );
+        </form>
+      </>
+    )
 }
 
 export default Login;
