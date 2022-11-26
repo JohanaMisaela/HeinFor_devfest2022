@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 // import logo from './../assets/esti.jpg'
 // import Vector from './../assets/VECTOR.png'
-import axios from "axios";
-import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function Login() {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState();
   const navigate = useNavigate();
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -17,7 +16,7 @@ function Login() {
     //   console.log(data);
       const res = await axios({
           method: 'POST',
-          url: `http://localhost:5000/api/user/login`,
+          url: `http://localhost:8000/api/user/login`,
           data: data,
         })
       console.log('data', res.data);
@@ -44,47 +43,32 @@ function Login() {
 
     return (
       <>
-      <a href="/">Revenir</a>
+      <NavLink to={"/"}>Revenir</NavLink>
       <form action="#" method="post" onSubmit={handleSubmit}>
-        <div className="container py-5">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col col-xl-10">
-              <div className="card" style={{ borderRadius: 1 + "rem" }}>
-                <div className="row g-0">
-                  <div className="col-md-6 col-lg-5 d-none d-md-block">
-                    <img
-                      alt="login form"
-                      className="img-fluid"
-                      style={{ borderRadius: 1 + "rem" + 0 + 0 + 1 + "rem" }}
-                    />
-                  </div>
-                  <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                    <div className="card-body p-4 p-lg-5 text-black">
-                      <div>
-                        <div className="d-flex align-items-center mb-3 pb-1">
-                          <span className="h1 fw-bold mb-0">
-                            <img
-                              alt=""
-                              className="img-fluid mr-5"
-                              style={{ width: 100 + "px" }}
-                            />
-                          </span>
-                        </div>
+          <div className="container py-5">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+              <div className="col col-xl-10">
+                <div className="card" style={{borderRadius: 1+'rem'}}>
+                  <div className="row g-0">
+                    <div className="col-md-6 col-lg-5 d-none d-md-block" >
+                      <img alt="login form" className="img-fluid" style={{borderRadius: 1+'rem'+ 0 +  0 + 1+'rem'}}/>
 
-                        <h5
-                          className="fw-normal mb-3 pb-3"
-                          style={{ letterSpacing: 1 + "px" }}
-                        >
-                          Se connecter sur votre compte
-                        </h5>
+                    </div>
+                    <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                      <div className="card-body p-4 p-lg-5 text-black">
 
-                        <div className="form-outline mb-4">
-                          <input
-                            name="login"
-                            type="email"
-                            id="form2Example17"
-                            className="form-control form-control-lg"
-                            placeholder="Addresse email"
+                        <div>
+
+                          <div className="d-flex align-items-center mb-3 pb-1">
+                            <span className="h1 fw-bold mb-0">
+                              <img alt="" className="img-fluid mr-5" style={{width:100+"px"}}/></span>
+                          </div>
+
+                          <h5 className="fw-normal mb-3 pb-3" style={{letterSpacing: 1+"px"}}>Se connecter sur votre compte</h5>
+
+                          <div className="form-outline mb-4">
+                            <input name="login" type="email" id="form2Example17"
+                            className="form-control form-control-lg" placeholder="Addresse email"
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}/>
@@ -105,12 +89,12 @@ function Login() {
                               <a className="btn btn-dark btn-lg btn-block" href='/dashboard'>Se connecter</a>
                             </div> */}
                           <div className="pt-1 mb-4">
-                            <button href='/dashboard' className="btn btn-dark btn-lg btn-block" type="submit" name="connect">Se connecter</button>
+                            <button className="btn btn-dark btn-lg btn-block" type="submit" name="connect">Se connecter</button>
                           </div>
 
                           <a className="small text-muted" href="#!">Mot de passe oublié?</a>
                           <p className="mb-5 pb-lg-2" style={{color: "#393f81"}}>Pas de compte?
-                          <a href="/register" className="text-info">S'inscrire</a></p>
+                          <NavLink to={"/register"} className="text-info">S'inscrire</NavLink></p>
                           <a href="#!" className="small text-muted">Bienvenu à ***** .</a>
 
                         </div>
@@ -127,4 +111,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default Login

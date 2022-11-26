@@ -28,6 +28,12 @@ const PostSchema = new mongoose.Schema(
       type: String,
     },
     likers: {
+      // si POST
+      type: [String],
+      required: true,
+    },
+    followers: {
+      // si event
       type: [String],
       required: true,
     },
