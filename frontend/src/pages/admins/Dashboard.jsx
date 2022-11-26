@@ -1,20 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Navbar from '../../layouts/admins/Navbar'
-import NewPostForm from './../../components/admins/Post/NewPostForm'
+import PostItem from './../../components/admins/postItem';
+import * as AOS from 'aos';
 
 function Dashboard() {
+  useEffect(()=>{
+    AOS.init()
+  },[])
+
   return (
     <div>
       <Navbar />
-   
-<<<<<<< HEAD
-      <div id='slide'>
-        
+      <div data-aos="fade-up">
+      <PostItem />
       </div>
-=======
-      <NewPostForm/>
->>>>>>> 80989ba83d8781153adc67757c3a84ae818bd495
-
     </div>
   )
 }

@@ -7,12 +7,13 @@ function plainte_table() {
         { title: 'Nom', field: 'nom' },
         { title: 'Quartier', field: 'quartier' },
         { title: 'Informations', field: 'text'},
-        { title: 'Type', field: 'type' }
+        { title: 'Type', field: 'type' },
+        { title: 'Date', field: 'date' },
       ]
     
       const data = [
-        { nom: 'Gatera', quartier: 'Ambohimanarina', text: "Ny aty aminay dia maloto be fona isanandro", type: "Polution de la terre" },
-        { nom: 'Mario', quartier: 'Antrano', text: "Tokony anary po ny olona fa maloto be", type: "Polution de l'air" }
+        { nom: 'Gatera', date:'2022-11-11', quartier: 'Ambohimanarina', text: "Ny aty aminay dia maloto be fona isanandro", type: "Polution de la terre" },
+        { nom: 'Mario', date:'2022-07-07', quartier: 'Antrano', text: "Tokony anary po ny olona fa maloto be", type: "Polution de l'air" }
       ]
         return (
             <div style={{ maxWidth: '100%' }}>

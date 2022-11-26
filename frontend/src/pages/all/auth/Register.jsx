@@ -6,11 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 function Register() {
   let [email, setEmail] = useState("");
   let [name, setName] = useState("");
-<<<<<<< HEAD
-  let [firstname, setFirstName] = useState("");
-=======
   let [firstname, setFirstname] = useState("");
->>>>>>> a9d24d069569ae2ff96b6cf6b8b6ef22859d4916
   let [quartier, setQuartier] = useState("");
   let [sexe, setSexe] = useState();
   let [pwd, setpwd] = useState();
@@ -105,11 +101,7 @@ function Register() {
                             placeholder="Prenom"
                             required
                             value={firstname}
-<<<<<<< HEAD
-                            onChange={(e) => setFirstName(e.target.value)}
-=======
                             onChange={(e) => setFirstname(e.target.value)}
->>>>>>> a9d24d069569ae2ff96b6cf6b8b6ef22859d4916
                           />
                         </div>
 

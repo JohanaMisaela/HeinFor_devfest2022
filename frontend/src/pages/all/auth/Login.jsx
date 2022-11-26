@@ -90,9 +90,7 @@ function Login() {
                           <p className="mb-5 pb-lg-2" style={{color: "#393f81"}}>Pas de compte?
                           <NavLink to={"/register"} className="text-info">S'inscrire</NavLink></p>
                           <a href="#!" className="small text-muted">Bienvenu à ***** .</a>
-                          
                         </div>
-        
                       </div>
                     </div>
                   </div>
