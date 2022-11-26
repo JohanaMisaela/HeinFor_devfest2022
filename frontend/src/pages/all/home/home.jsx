@@ -1,10 +1,11 @@
-import '../../App.css';
-import '../../assets/index.css';
-import b1 from './assets/bird1.png';
-import b2 from './assets/bird2.png';
-import fo from './assets/forest.png';
-import ro from './assets/rocks.png';
-import wa from './assets/water.png'
+import '../../../App.css';
+import '../../../assets/index.css';
+import b1 from './../../../assets/bird1.png';
+import b2 from './../../../assets/bird2.png';
+import fo from './../../../assets/forest.png';
+import ro from './../../../assets/rocks.png';
+import wa from './../../../assets/water.png'
+
 
 function App() {
   const text = document.getElementById('text')
@@ -38,8 +39,7 @@ function App() {
         <ul>
             <li><a href="" class="active">Home</a></li>
             <li><a href="">About</a></li>
-            <li><a href="">Destination</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="">Login</a></li>
         </ul>
     </header>
      </div>
@@ -49,7 +49,7 @@ function App() {
         <img src={b1} id="bird1"/>
         <img src={b2} id="bird2"/>
         <img src= {fo}id="forest"/>
-        <a href="" id="btn">Explore</a>
+        <a href="/dashboard" id="btn">Dashboard</a>
         <img src={ro} id="rocks"/>
         <img src={wa} id="water"/>
      </div>
