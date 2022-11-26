@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import '../../../App.css';
 import '../../../assets/index.css';
 import b1 from './../../../assets/bird1.png';
@@ -35,10 +36,10 @@ function App() {
     <div className="App">
       <div >
      <header id="header">
-        <a href="" className="logo">HeinFor</a>
+        <a className="logo"><NavLink activeClassName='active' to={`/`}>HeinFor</NavLink></a>
         <ul>
-        <li><a href="" className="active">Accueil</a></li>
-            <li><a href="#sec">A propos</a></li>
+        <li><a href="" className="active"><NavLink activeClassName='active' to={`/`}>Accueil</NavLink></a></li>
+            <li><a href="#sec"><NavLink activeClassName='active' to={`/events`}>Evènnement</NavLink></a></li>
             <li><a href="">Contact</a></li>
         </ul>
     </header>
