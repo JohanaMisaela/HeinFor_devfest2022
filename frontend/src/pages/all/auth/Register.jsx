@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Register() {
   let [email, setEmail] = useState("");
   let [name, setName] = useState("");
-  let [firstName, setFirstName] = useState("");
+  let [firstname, setFirstName] = useState("");
   let [quartier, setQuartier] = useState("");
   let [sexe, setSexe] = useState();
   let [pwd, setpwd] = useState();
@@ -15,7 +15,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data = { name, firstName, sexe, quartier, email, pwd };
+    const data = { name, firstname, sexe, quartier, email, pwd };
     //   console.log(data);
     const res = await axios({
       method: "POST",
@@ -100,7 +100,7 @@ function Register() {
                             className="form-control form-control-lg"
                             placeholder="Prenom"
                             required
-                            value={firstName}
+                            value={firstname}
                             onChange={(e) => setFirstName(e.target.value)}
                           />
                         </div>

@@ -67,6 +67,10 @@ const UserSchema = new mongoose.Schema(
       type: [String],
       // les postes liker par user
     },
+    followed: {
+      type: [String],
+      // les events suivi par user
+    },
   },
   {
     timestamps: true,
