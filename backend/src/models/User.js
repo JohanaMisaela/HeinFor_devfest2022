@@ -79,3 +79,6 @@ UserSchema.statics.findUser = async (email, pwd) => {
   const isPasswordValid = await bcrypt.compare(pwd, user.pwd);
   if (!isPasswordValid) throw new Error("Erreur Pas possible de se connecter!");
   return user;
+};
+
+module.exports = User = mongoose.model("User", UserSchema);
