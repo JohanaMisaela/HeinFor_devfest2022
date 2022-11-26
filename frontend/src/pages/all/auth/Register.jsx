@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Register() {
   let [email, setEmail] = useState("");
@@ -45,7 +45,7 @@ function Register() {
 
   return (
     <>
-      <a href="/">Revenir</a>
+      <NavLink to={"/"}>Revenir</NavLink>
       <form action="#" method="post" onSubmit={handleSubmit}>
         <div className="container py-5">
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -187,9 +187,9 @@ function Register() {
                           style={{ color: "#393f81" }}
                         >
                           Vous avez déja un compte?
-                          <a href="/login" className="text-info">
+                          <NavLink to={"/login"} className="text-info">
                             Se connecter
-                          </a>
+                          </NavLink>
                         </p>
                         <a href="#!" className="small text-muted">
                           Bienvenu à ***** .
