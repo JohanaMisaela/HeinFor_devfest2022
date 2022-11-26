@@ -1,7 +1,7 @@
-import React,{Link} from 'react';
+import React from 'react'
 
 function Navbar() {
-  return (
+   return (
     <>
      <nav class="navbar navbar-expand-lg" style={{backgroundColor: "#094b65"}}>
       <a class="navbar-brand text-light" href="/">Notre Logo</a>
@@ -12,16 +12,16 @@ function Navbar() {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <Link to='/addEvent' class="nav-link">Evenements</Link>
+            <a class="nav-link text-light " href="#">Evenements</a>
           </li>
           <li class="nav-item">
-          <Link to='/' class="nav-link text-light">Plaintes</Link>
+            <a class="nav-link text-light" href="#">Plaintes</a>
           </li>
           <li class="nav-item">
-          <Link to='/badge' class="nav-link text-light">Badge</Link>
+            <a class="nav-link text-light" href="#">Sondages</a>
           </li>
           <li class="nav-item">
-          <Link to='/credit' class="nav-link text-light">Crédit</Link>
+            <a class="nav-link text-light" href="#">Crédits</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

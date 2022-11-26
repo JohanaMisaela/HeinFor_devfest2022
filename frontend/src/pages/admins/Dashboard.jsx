@@ -3,6 +3,7 @@ import Navbar from '../../layouts/admins/Navbar'
 import PostItem from './../../components/admins/postItem';
 import * as AOS from 'aos';
 
+
 function Dashboard() {
   useEffect(()=>{
     AOS.init()
@@ -10,11 +11,15 @@ function Dashboard() {
 
   return (
     <div>
+      <div>
       <Navbar />
+      </div>
+
       <div data-aos="fade-up">
       <PostItem />
       </div>
     </div>
+
   )
 }
 
