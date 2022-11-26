@@ -5,9 +5,12 @@ import Dashboard from "./pages/admins/Dashboard.jsx";
 import Login from "./pages/all/auth/Login";
 import Register from "./pages/all/auth/Register";
 import Event from "./pages/admins/events/events_table";
+import User from "./pages/admins/users/users_table";
 import Complaint from "./pages/admins/plaintes/plainte_table";
 import AddComplaint from "./pages/clients/complaints/complaint";
 import AddEvent from "./components/admins/addEvent";
+import AddBadge from "./pages/admins/badge/addBadge";
+import AttribBadge from "./pages/admins/badge/attribBadge";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
@@ -49,7 +52,10 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/events" element={<Event />} />
+              <Route path="/users" element={<User />} />
               <Route path="/complaints" element={<Complaint />} />
+              <Route path="/addBadge/:id" element={<AddBadge />} />
+              <Route path="/attribBadge/:id" element={<AttribBadge />} />
               <Route path="/complaints/add" element={<AddComplaint />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/addEvent" element={<AddEvent />} />
