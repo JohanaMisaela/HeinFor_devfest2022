@@ -19,7 +19,7 @@ function Register() {
   //   console.log(data);
     const res = await axios({
         method: 'POST',
-        url: `http://localhost:8000/api/user/signup`,
+        url: `http://localhost:5000/api/user/signup`,
         data: data,
       })
     console.log('data', res.data);
