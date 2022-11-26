@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Link} from 'react';
 
 function Navbar() {
   return (
@@ -12,7 +12,7 @@ function Navbar() {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Evenements</a>
+            <Link to='/addEvent' class="nav-link">Evenements</Link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Plaintes</a>
