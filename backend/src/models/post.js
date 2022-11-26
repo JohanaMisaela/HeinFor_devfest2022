@@ -10,6 +10,10 @@ const PostSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
+    type: {
+      type: String,
+      required: true,
+    },
     text: {
       type: String,
       trim: true,
@@ -27,6 +31,9 @@ const PostSchema = new mongoose.Schema(
     likes: {
       type: [String],
       required: true,
+    },
+    votes: {
+      type: [String],
     },
     comments: {
       type: [
