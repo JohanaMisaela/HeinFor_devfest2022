@@ -17,7 +17,7 @@ function App() {
   const header = document.getElementById('header')
 
   
-        const scroll = () =>{
+        const scroll = (event) =>{
         const value = window.scrollY;
         text.style.top = 50 + value * -0.5 + '%';
         bird1.style.top = value * -1.5 + 'px';
@@ -37,23 +37,22 @@ function App() {
         <a href="" className="logo">HeinFor</a>
         <ul>
             <li><a href="" className="active">Accueil</a></li>
-            <li><a href="">Utilisateur</a></li>
-            <li><a href="">Plainte</a></li>
+            <li><a href="#sec">A propos</a></li>
             <li><a href="">Contact</a></li>
         </ul>
     </header>
      </div>
      <div id='section'>
-     <h2 id="text"><span>It's time for a new </span><br/> Adventure</h2>
+     <h2 id="text"><span>Ensemble Changeons </span><br/> Le Monde</h2>
   
         <img src={b1} id="bird1"/>
         <img src={b2} id="bird2"/>
         <img src= {fo}id="forest"/>
-        <a href="" id="btn">Explore</a>
+        <a href="" id="btn">Log in</a>
         <img src={ro} id="rocks"/>
         <img src={wa} id="water"/>
      </div>
-     <div className="sec" >
+     <div className="sec" id='sec'>
         <h2>Need to take rest , let's spend holydays together.</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
