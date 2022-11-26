@@ -9,6 +9,7 @@ function Login() {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState();
   const navigate = useNavigate();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -29,7 +30,7 @@ function Login() {
           showConfirmButton: true,
         })
         navigate('/dashboard');
-      }   
+      }
       if (res.status === 200 ) {
         Swal.fire({
           icon: 'error',
@@ -37,10 +38,10 @@ function Login() {
           // text: 'Bad credentials!',
           text:res.data.message
         })
-      }     
+      }
   }
-  
-  
+
+
     return (
       <>
       <a href="/">Revenir</a>
@@ -88,15 +89,15 @@ function Login() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}/>
                           </div>
-        
+
                           <div className="form-outline mb-4">
-                            <input name="password" type="password" id="form2Example27" 
+                            <input name="password" type="password" id="form2Example27"
                             className="form-control form-control-lg" placeholder="Mot de passe"
                              required
                              value={password}
                              onChange={(e) => setPassword(e.target.value)}/>
                           </div>
-        
+
                             {/* <div className="pt-1 mb-4">
                               <button className="btn btn-dark btn-lg btn-block" type="submit" name="connect">Se connecter</button>
                             </div>
@@ -106,14 +107,14 @@ function Login() {
                           <div className="pt-1 mb-4">
                             <button href='/dashboard' className="btn btn-dark btn-lg btn-block" type="submit" name="connect">Se connecter</button>
                           </div>
-        
+
                           <a className="small text-muted" href="#!">Mot de passe oublié?</a>
                           <p className="mb-5 pb-lg-2" style={{color: "#393f81"}}>Pas de compte?
                           <a href="/register" className="text-info">S'inscrire</a></p>
                           <a href="#!" className="small text-muted">Bienvenu à ***** .</a>
-                          
+
                         </div>
-        
+
                       </div>
                     </div>
                   </div>

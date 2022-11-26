@@ -15,13 +15,13 @@ function Navbar() {
             <Link to='/addEvent' class="nav-link">Evenements</Link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Plaintes</a>
+          <Link to='/' class="nav-link">Plaintes</Link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sondages</a>
+          <Link to='/badge' class="nav-link">Badge</Link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Crédits</a>
+          <Link to='/credit' class="nav-link">Crédit</Link>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
