@@ -34,11 +34,11 @@ function App() {
     <div className="App">
       <div >
      <header id="header">
-        <a href="" class="logo">E-Travel</a>
+        <a href="" className="logo">HeinFor</a>
         <ul>
-            <li><a href="" class="active">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Destination</a></li>
+            <li><a href="" className="active">Accueil</a></li>
+            <li><a href="">Utilisateur</a></li>
+            <li><a href="">Plainte</a></li>
             <li><a href="">Contact</a></li>
         </ul>
     </header>
@@ -53,7 +53,7 @@ function App() {
         <img src={ro} id="rocks"/>
         <img src={wa} id="water"/>
      </div>
-     <div class="sec" >
+     <div className="sec" >
         <h2>Need to take rest , let's spend holydays together.</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
