@@ -30,12 +30,10 @@ ul li {
   border: 2px solid transparent;
   border-radius: 5px;
   padding: 10px;
-  text-decoration: none;
-
   transition: background 0.2s;
 }
 ul li a {
-  color:#094b65;
+  color: #2375D8;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -60,14 +58,13 @@ ul li ul li {
   line-height: 1.7;
 }
 ul li ul li a {
-  color: #2375D8;
+  color: #094b65;
 }
 ul li:hover {
   background: #094b65;
-  border: 2px solid  #094b65;
-  border-right: 2px solid  #094b65;
-  /* border-bottom: 2px solid  #094b65; */
-  text-decoration: none;
+  border: 2px solid #094b65;
+  border-right: 2px solid #094b65;
+  border-bottom: 2px solid #094b65;
 }
 ul li:hover a {
   color: #F9F8FD;
@@ -109,4 +106,4 @@ ul li:hover ul li a {
   100% {
     top: 15px;
   }
-}/*# sourceMappingURL=Navbar.css.map */
+}/*# sourceMappingURL=navbar.css.map */
