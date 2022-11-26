@@ -63,6 +63,9 @@ const UserSchema = new mongoose.Schema(
     fb: {
       type: String,
     },
+    votes: {
+      type: [String],
+    },
     likes: {
       type: [String],
       // les postes liker par user
