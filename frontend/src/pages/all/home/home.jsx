@@ -1,10 +1,10 @@
-import '../../App.css';
-import '../../assets/index.css';
-import b1 from './assets/bird1.png';
-import b2 from './assets/bird2.png';
-import fo from './assets/forest.png';
-import ro from './assets/rocks.png';
-import wa from './assets/water.png'
+import '../../../App.css';
+import '../../../assets/index.css';
+import b1 from '../../../assets/bird1.png';
+import b2 from '../../../assets/bird2.png';
+import fo from '../../../assets/forest.png';
+import ro from '../../../assets/rocks.png';
+import wa from '../../../assets/water.png'
 
 function App() {
   const text = document.getElementById('text')
