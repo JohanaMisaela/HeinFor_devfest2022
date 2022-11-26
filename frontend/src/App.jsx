@@ -9,6 +9,8 @@ import User from './pages/admins/users/users_table';
 import Complaint from './pages/admins/plaintes/plainte_table';
 import AddComplaint from './pages/clients/complaints/complaint';
 import AddEvent from './components/admins/addEvent';
+import AddBadge from './pages/admins/badge/addBadge';
+import AttribBadge from './pages/admins/badge/attribBadge';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/users" element={<User/>}/>
         <Route path="/complaints/add" element={<AddComplaint/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/attribBadge/:id" element={<AttribBadge/>}/>
+        <Route path="/addBadge/:id" element={<AddBadge/>}/>
         <Route path="/addEvent" element={<AddEvent/>}/>
       </Routes>
       </div>
