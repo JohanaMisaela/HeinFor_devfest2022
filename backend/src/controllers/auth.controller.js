@@ -16,10 +16,10 @@ module.exports.signIn = async (req, res) => {
     const user = await User.findUser(email, pwd);
     const token = createToken(user._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge });
-    res.status(200).json({ user: user._id });
+    res.status(200).json({ user });
   } catch (err) {
     const errors = signUpErrors(err);
-    res.status(400).send(errors);
+    res.status(400).send(err);
   }
 };
 
@@ -46,6 +46,20 @@ module.exports.signUp = async (req, res) => {
   } catch (err) {
     const errors = signUpErrors(err);
     res.status(400).send({ err });
+  }
+};
+
+module.exports.deleteUser = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id))
+    return res.status(400).send("ID unknown : " + req.params.id);
+
+  try {
+    await User.deleteOne({ _id: req.params.id }).exec();
+    res
+      .status(200)
+      .json({ message: req.params.id + "Was deleted successfilly." });
+  } catch (err) {
+    return res.status(500).json({ message: err });
   }
 };
 
