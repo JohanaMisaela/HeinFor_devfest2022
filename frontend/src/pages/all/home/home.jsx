@@ -17,7 +17,7 @@ function App() {
   const header = document.getElementById('header')
 
   
-        const scroll = (event) =>{
+        const scroll = () =>{
         const value = window.scrollY;
         text.style.top = 50 + value * -0.5 + '%';
         bird1.style.top = value * -1.5 + 'px';
