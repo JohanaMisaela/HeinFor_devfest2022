@@ -6,15 +6,10 @@ import b2 from './../../../assets/bird2.png';
 import fo from './../../../assets/forest.png';
 import ro from './../../../assets/rocks.png';
 import wa from './../../../assets/water.png'
-import PostItem from '../../../components/admins/postItem';
 import { useEffect } from 'react';
-import * as AOS from 'aos';
 
 function App() {
   const text = document.getElementById('text')
-  useEffect(()=>{
-    AOS.init()
-  },[])
   const bird1 = document.getElementById('bird1')
   const bird2 = document.getElementById('bird2')
   const btn = document.getElementById('btn')
@@ -101,9 +96,6 @@ function App() {
           cum delectus adipisci quibusdam rerum, obcaecati beatae.
 
         </p>
-      </div>
-      <div data-aos="fade-up">
-      <PostItem />
       </div>
     </div></>
   );
