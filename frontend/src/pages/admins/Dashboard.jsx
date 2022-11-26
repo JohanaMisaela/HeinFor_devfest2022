@@ -6,7 +6,9 @@ function Dashboard() {
     <div>
       <Navbar />
    
-      DASHBOARD
+      <div id='slide'>
+        
+      </div>
 
     </div>
   )
