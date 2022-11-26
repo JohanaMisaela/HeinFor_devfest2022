@@ -5,9 +5,11 @@ function Dashboard() {
   return (
     <div>
       <Navbar />
-      Dashboard
+   
+      
+
     </div>
   )
 }
 
-export default Dashboard
+export default Dashboard;

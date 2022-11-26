@@ -94,8 +94,10 @@ function Register() {
                     </div>
   
                     <div class="form-outline mb-4">
-                        <select name="status" type="email" id="form2Example17" class="form-control form-control-lg">
-                            <option>Sexe</option>
+                        <select name="status" type="email" id="form2Example17" class="form-control form-control-lg"
+                       value={sexe}
+                       onChange={(e) => setSexe(e.target.value)}>
+                            <option value=''>Sexe</option>
                               <option value={0}>Feminin</option>
                               <option value={1}>Masxulin</option>
                         </select>

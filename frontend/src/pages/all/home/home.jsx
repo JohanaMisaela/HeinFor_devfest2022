@@ -6,6 +6,7 @@ import fo from './../../../assets/forest.png';
 import ro from './../../../assets/rocks.png';
 import wa from './../../../assets/water.png'
 
+
 function App() {
   const text = document.getElementById('text')
   const bird1 = document.getElementById('bird1')
@@ -36,23 +37,23 @@ function App() {
      <header id="header">
         <a href="" className="logo">HeinFor</a>
         <ul>
-            <li><a href="" class="active">Home</a></li>
-            <li><a href="#sec">About</a></li>
+        <li><a href="" className="active">Accueil</a></li>
+            <li><a href="#sec">A propos</a></li>
             <li><a href="">Contact</a></li>
         </ul>
     </header>
      </div>
      <div id='section'>
-     <h2 id="text"><span>It's time for a new </span><br/> Adventure</h2>
+     <h2 id="text"><span>Ensemble Changeons </span><br/> Le Monde</h2>
   
         <img src={b1} id="bird1"/>
         <img src={b2} id="bird2"/>
         <img src= {fo}id="forest"/>
-        <a href="/login" id="btn">Login</a>
+        <a href="/login" id="btn">Log in</a>
         <img src={ro} id="rocks"/>
         <img src={wa} id="water"/>
      </div>
-     <div className="sec" id='sec'>
+     <div className="sec" >
         <h2>Need to take rest , let's spend holydays together.</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
