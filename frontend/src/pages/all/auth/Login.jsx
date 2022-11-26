@@ -1,57 +1,108 @@
-import React from 'react'
-// import './login.css'
+import React, { useState } from 'react'
+// import logo from './../assets/esti.jpg'
+// import Vector from './../assets/VECTOR.png'
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom'
+
 function Login() {
-
-  const signUpButton = document.getElementById('signUp');
-  const signInButton = document.getElementById('signIn');
-  const container = document.getElementById('container');
-
-  signUpButton.addEventListener('click', () => {
-    container.classList.add("right-panel-active");
-  });
-
-  signInButton.addEventListener('click', () => {
-    container.classList.remove("right-panel-active");
-  });
-
-  return (
-    <div className="container" id="container">
-	<div className="form-container sign-up-container">
-		<form action="#">
-			<h1>Create Account</h1>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
-		</form>
-	</div>
-	<div className="form-container sign-in-container">
-		<form action="#">
-			<h1>Log in</h1>
-			
-			
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button>Log In</button>
-		</form>
-	</div>
-	<div className="overlay-container">
-		<div className="overlay">
-			<div className="overlay-panel overlay-left">
-				<h1>Welcome Back Samu!</h1>
-				<p>Already have an account, let's log in.</p>
-				<button className="ghost" id="signIn">Log In</button>
-			</div>
-			<div className="overlay-panel overlay-right">
-				<h1>Hello, Soa!</h1>
-				<p>You don't have an account, let's sign in.</p>
-				<button className="ghost" id="signUp">Sign Up</button>
-			</div>
-		</div>
-	</div>
-</div>
-  )
+    let [email, setEmail] = useState('')
+    let [password, setPassword] = useState()
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      const data = { email, password};
+    //   console.log(data);
+      const res = await axios({
+          method: 'POST',
+          url: `http://localhost:8000/api/user/login`,
+          data: data,
+        })
+      console.log('data', res.data);
+      console.log('status', res.status);
+      if (res.status === 201 ){
+        localStorage.setItem('id', JSON.stringify(res.data.data_id))
+        Swal.fire({
+          icon: 'success',
+          title: 'Logged successfully',
+          showConfirmButton: true,
+        })
+        navigate('/dashboard');
+      }   
+      if (res.status === 200 ) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          // text: 'Bad credentials!',
+          text:res.data.message
+        })
+      }     
+  }
+  
+  
+    return (
+      <>
+      <a href="/">Revenir</a>
+      <form action="#" method="post" onSubmit={handleSubmit}>
+          <div className="container py-5">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+              <div className="col col-xl-10">
+                <div className="card" style={{borderRadius: 1+'rem'}}>
+                  <div className="row g-0">
+                    <div className="col-md-6 col-lg-5 d-none d-md-block" >
+                      <img alt="login form" className="img-fluid" style={{borderRadius: 1+'rem'+ 0 +  0 + 1+'rem'}}/>
+                  
+                    </div>
+                    <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                      <div className="card-body p-4 p-lg-5 text-black">
+        
+                        <div>
+        
+                          <div className="d-flex align-items-center mb-3 pb-1">
+                            <span className="h1 fw-bold mb-0">
+                              <img alt="" className="img-fluid mr-5" style={{width:100+"px"}}/></span>
+                          </div>
+  
+                          <h5 className="fw-normal mb-3 pb-3" style={{letterSpacing: 1+"px"}}>Se connecter sur votre compte</h5>
+                        
+                          <div className="form-outline mb-4">
+                            <input name="login" type="email" id="form2Example17" 
+                            className="form-control form-control-lg" placeholder="Addresse email" 
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}/>
+                          </div>
+        
+                          <div className="form-outline mb-4">
+                            <input name="password" type="password" id="form2Example27" 
+                            className="form-control form-control-lg" placeholder="Mot de passe"
+                             required
+                             value={password}
+                             onChange={(e) => setPassword(e.target.value)}/>
+                          </div>
+        
+                          <div className="pt-1 mb-4">
+                            <button className="btn btn-dark btn-lg btn-block" type="submit" name="connect">Se connecter</button>
+                          </div>
+        
+                          <a className="small text-muted" href="#!">Mot de passe oublié?</a>
+                          <p className="mb-5 pb-lg-2" style={{color: "#393f81"}}>Pas de compte?
+                          <a href="/register" className="text-info">S'inscrire</a></p>
+                          <a href="#!" className="small text-muted">Bienvenu à ***** .</a>
+                          
+                        </div>
+        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </>
+    )
 }
 
 export default Login

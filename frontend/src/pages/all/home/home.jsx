@@ -1,10 +1,10 @@
 import '../../../App.css';
 import '../../../assets/index.css';
-import b1 from '../../../assets/bird1.png';
-import b2 from '../../../assets/bird2.png';
-import fo from '../../../assets/forest.png';
-import ro from '../../../assets/rocks.png';
-import wa from '../../../assets/water.png'
+import b1 from './../../../assets/bird1.png';
+import b2 from './../../../assets/bird2.png';
+import fo from './../../../assets/forest.png';
+import ro from './../../../assets/rocks.png';
+import wa from './../../../assets/water.png'
 
 function App() {
   const text = document.getElementById('text')
@@ -36,7 +36,7 @@ function App() {
      <header id="header">
         <a href="" className="logo">HeinFor</a>
         <ul>
-            <li><a href="" className="active">Accueil</a></li>
+        <li><a href="" className="active">Accueil</a></li>
             <li><a href="#sec">A propos</a></li>
             <li><a href="">Contact</a></li>
         </ul>

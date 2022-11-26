@@ -2,7 +2,9 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 
 import Home from './pages/all/home/home';
-import Auth from './pages/all/auth/Login';
+import Dashboard from './pages/admins/Dashboard';
+import Login from './pages/all/auth/Login';
+import Register from './pages/all/auth/Register';
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <div>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/auth" element={<Auth/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
       </Routes>
       </div>
    </Router>
