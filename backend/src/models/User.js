@@ -54,7 +54,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
     idBadge: {
-      type: String,
+      type: [String],
     },
     status: {
       type: Boolean,
@@ -62,6 +62,9 @@ const UserSchema = new mongoose.Schema(
     },
     fb: {
       type: String,
+    },
+    votes: {
+      type: [String],
     },
     likes: {
       type: [String],
