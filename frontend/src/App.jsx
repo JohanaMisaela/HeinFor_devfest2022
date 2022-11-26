@@ -4,7 +4,6 @@ import Home from './pages/all/home/home';
 import Dashboard from './pages/admins/Dashboard.jsx';
 import Login from './pages/all/auth/Login';
 import Register from './pages/all/auth/Register';
-import Auth from './pages/all/auth/Login';
 import Event from './pages/admins/events/events_table';
 
 function App() {
@@ -17,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/events" element={<Event/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
       </div>
    </Router>
