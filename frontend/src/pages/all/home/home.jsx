@@ -6,6 +6,7 @@ import fo from './../../../assets/forest.png';
 import ro from './../../../assets/rocks.png';
 import wa from './../../../assets/water.png'
 
+
 function App() {
   const text = document.getElementById('text')
   const bird1 = document.getElementById('bird1')
@@ -48,7 +49,7 @@ function App() {
         <img src={b1} id="bird1"/>
         <img src={b2} id="bird2"/>
         <img src= {fo}id="forest"/>
-        <a href="" id="btn">Log in</a>
+        <a href="/login" id="btn">Log in</a>
         <img src={ro} id="rocks"/>
         <img src={wa} id="water"/>
      </div>
