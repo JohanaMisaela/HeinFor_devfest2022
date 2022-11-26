@@ -4,15 +4,14 @@ const bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema(
   {
-    nom: {
+    name: {
       type: String,
       required: true,
       minLength: 3,
       maxLength: 55,
-      unique: true,
       trim: true,
     },
-    prenom: {
+    firstname: {
       type: String,
       required: true,
       minLength: 3,
@@ -23,6 +22,7 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       minLength: 1,
       maxLength: 2,
+      default: 00,
     },
     email: {
       type: String,
@@ -51,14 +51,14 @@ const UserSchema = new mongoose.Schema(
     },
     sexe: {
       type: Boolean, //0=F, 1=M
+      required: true,
     },
     idBadge: {
       type: String,
-      required: true,
     },
     status: {
       type: Boolean,
-      required: true,
+      default: 0,
     },
     fb: {
       type: String,
@@ -73,12 +73,13 @@ UserSchema.pre("save", async function () {
   if (this.isModified("pwd")) this.pwd = await bcrypt.hash(this.pwd, 8);
 });
 
-UserSchema.statics.findUser = async (email, pwd) => {
-  const user = await User.findOne({ email });
+UserSchema.statics.findUser = async function (email, pwd) {
+  console.log("ok");
+  const user = await this.findOne({ email });
   if (!user) throw new Error("Erreur Pas possible de se connecter!");
   const isPasswordValid = await bcrypt.compare(pwd, user.pwd);
   if (!isPasswordValid) throw new Error("Erreur Pas possible de se connecter!");
   return user;
 };
 
-module.exports = User = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("User", UserSchema);

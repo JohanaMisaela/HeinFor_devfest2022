@@ -13,7 +13,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/auth" element={<Auth/>}/>
-        <Route path="/events" element={<Event/>}/>
       </Routes>
       </div>
    </Router>
