@@ -17,6 +17,10 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
+import axios from 'axios';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -37,9 +41,24 @@ const tableIcons = {
     ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
   };
-function events_table() {
+function Events_table() {
+  const link = "http://localhost:5000/api/post/"
+
+  const [events, setEvents] = useState([])
+    const getEvent = async () => {
+        axios.get(link).then(
+            res =>  {
+                setEvents(res.data.post.filter(post => post.isEvent))
+                console.log(res.data.post.filter(post => post.isEvent))
+            }
+        )
+
+    }
+    useEffect(()=>{
+        getEvent()
+    },[])
   const colums = [
-    { title: 'Date', field: 'date' },
+    // { title: 'Date', field: 'date' },
     { title: 'Quartier', field: 'quartier' },
     { title: 'Informations', field: 'text'},
     { title: 'Type', field: 'type' }
@@ -49,14 +68,138 @@ function events_table() {
     { date: '2022-11-11', quartier: 'Ambohimanarina', text: "Ny atao dia andeha akany andafy de iaina fiainanan milamina apres le reboisements", type: "Reboisement" },
     { date: '2022-11-12', quartier: 'Antrano', text: "Ario ny fako", type: "Fanarimpakp" }
   ]
+
+  //Ajout
+  const ajout = async (addedData) => {
+    await axios({
+      method: "post",
+      url: link,
+      data: addedData
+    })
+    .then(res=>{
+      console.log(res.status)
+      if(res.status === 201){
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'added successfully'
+        })
+      }
+      else if(!res.data.err === 1) {
+        console.log(res.data.error)
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Veuillez bien remplir le formulaire!'
+      })
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Une erreur s\'est produite. Verifier votre serveur!'
+    })
+    })
+  }
+//Udate
+const update = async (rowData, id) => {
+  const update = await axios.put(`${link}${id}`, rowData)
+  if(update.data.error !== null){
+    Swal.fire({
+      icon: 'success',
+      title: 'Success',
+      text: 'Mis à jour avec succès'
+    })
+  }  
+  else if(update.data.error){
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `${update.data.error}` 
+    })
+  } 
+}
+  //Supprimer
+  const supprimer = async(id) => {
+    Swal.fire({
+      title: "Attention",
+      text: "Etes-vous sûr de vouloir supprimer cette evenement",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then( async function (isOkay) {
+          if (isOkay) {
+              const suppr = await axios.delete(`${link}${id}`,{id})
+              if(suppr.status === 200){
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Success',
+                  text: 'L\'evenement a été supprimé avec succès'
+              })
+              const newRowData = events.filter(elm => elm._id !== id)
+              setEvents(newRowData)
+              }  else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Une erreur s\'est produite. Verifier votre serveur!'
+                })
+            } 
+          }
+      });
+        return false;
+  }
     return (
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
             columns={colums}
-            data={data}
+            data={events}
                     icons={tableIcons}
                     grouping={true}
             title="Liste des evenements"
+            editable={{
+              onRowAdd: newData =>
+                new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    const data = {
+                      nom: newData.nom,
+                      prenom: newData.prenom,
+                      genre: newData.genre,
+                      mail: newData.mail,
+                      contact: newData.contact,
+                      dateDeNaissance: newData.dateDeNaissance,
+                      adresse: newData.adresse,
+                      photo:newData.photo,
+                      default_pass:newData.default_pass
+                  }
+                    delete newData['tableData']
+                    console.log(data)
+                    setEvents([...events, data]);
+                    ajout(data)
+                    resolve();
+                  }, 1000)
+                }),
+                
+                onRowUpdate: (newData, oldData) => {
+                  return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                      const dataUpdate = [...events];
+                      // In dataUpdate, find target
+                      const target = dataUpdate.find(
+                        (el) => el._id === oldData._id
+                      );
+                      const index = dataUpdate.indexOf(target);
+                      dataUpdate[index] = newData;
+                      setEvents([...dataUpdate]);
+                      update(newData, oldData._id)
+                      resolve();
+                    }, 1000);
+                  });
+                }  
+            }}
             options={{
               paging:true,
               pageSize:10,
@@ -75,9 +218,16 @@ function events_table() {
               filterCellStyle: {
                 textAlign: "center"},
               }}
+              actions={[
+                {
+                  icon: tableIcons.Delete,  
+                  tooltip: "Supprimer",
+                  onClick: (event, rowData) => supprimer(rowData._id)
+                }
+              ]}
           />
         </div>
       )
 }
 
-export default events_table;
+export default Events_table;
