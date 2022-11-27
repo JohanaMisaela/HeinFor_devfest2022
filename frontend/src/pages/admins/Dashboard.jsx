@@ -14,7 +14,6 @@ function Dashboard() {
       <div data-aos="fade-up">
       <PostItem />
       </div>
-
     </div>
   )
 }
