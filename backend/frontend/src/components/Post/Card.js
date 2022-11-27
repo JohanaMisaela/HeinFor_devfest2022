@@ -125,11 +125,12 @@ const Card = ({ post }) => {
                   />
                   <span> {post.comments.length} </span>
                 </div>
-                {!post.isPlainte ? (
-                  <LikeButton post={post} />
+                <LikeButton post={post} />
+                {/* {!post.isPlainte ? (
+                  ''
                 ) : (
                   <input type="radio" value={() => setbol(!bol)} />
-                )}
+                )} */}
                 <img src="./img/icons/share.svg" alt="share " />
               </div>
               {showComments && <CardComments post={post} />}
