@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { addPosts, getPosts } from "../../actions/post.action";
+import { addPosts, getPosts } from "../actions/post.action";
 import { isEmpty, timestampParser } from "../Utils";
 
 const NewPostForm = () => {
