@@ -20,11 +20,11 @@
   text-decoration: none;
 }
 *::-moz-selection {
-  background: #77b7ff;
+  background: #e8f1fe;
   color: yellow;
 }
 *::selection {
-  background: #77b7ff;
+  background: #e8f1fe;
   color: yellow;
 }
 
@@ -48,8 +48,8 @@ textarea:focus {
 
 button,
 input[type=submit] {
-  background: #c4e4ff;
-  color: #77b7ff;
+  background: #094b65;
+  color: #e8f1fe;
   font-family: "font-3", serif;
   cursor: pointer;
   transition: 0.2s;
@@ -61,8 +61,8 @@ input[type=submit] {
 }
 button:hover,
 input[type=submit]:hover {
-  background: #77b7ff;
-  color: #c4e4ff;
+  background: #e8f1fe;
+  color: #094b65;
 }
 
 input[type=checkbox] {
@@ -120,11 +120,20 @@ body {
   text-align: center;
 }
 .home .main .home-header .connection-form {
-  margin-top: 50px;
-  margin-left: 35%;
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
   border-radius: 20px;
   padding: 20px;
+  margin-top: 20%;
+  padding-bottom: 10%;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
 }
 .home .main .home-header .connection-form ul {
   display: flex;
@@ -139,10 +148,10 @@ body {
   margin: 0 8px;
 }
 .home .main .home-header .connection-form ul .active-btn {
-  background: #77b7ff;
+  background: #094b65;
 }
 .home .main .home-header .connection-form ul .active-btn:hover {
-  background: #c4e4ff;
+  background: #094b65;
 }
 .home .main .home-header .connection-form ul li:not(.active-btn):hover {
   transform: translateX(3px);
@@ -153,6 +162,15 @@ body {
   font-size: 1.2rem;
   font-family: "font-2", serif;
   border-radius: 20px;
+  box-shadow: #094b65;
+  background-color: #e8f1fe;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
 }
 .home .main .home-header .connection-form form input:focus {
   box-shadow: 0 0 3px rgba(51, 51, 51, 0.2);
@@ -160,6 +178,7 @@ body {
 .home .main .home-header .connection-form form input[type=submit] {
   padding: 14px 14px;
   border-radius: 20px;
+  background: #094b65;
 }
 .home .right-side {
   position: relative;
@@ -180,7 +199,7 @@ nav {
   width: 100%;
   height: 45px;
   border-radius: 6px;
-  box-shadow: 18px 1px 0px #77b7ff, 22px 4px 0px 0px rgb(219, 218, 218);
+  box-shadow: 18px 1px 0px #e8f1fe, 22px 4px 0px 0px rgb(219, 218, 218);
   z-index: 10;
   top: 0;
 }
@@ -255,7 +274,7 @@ nav .nav-container ul li img {
 .card-container {
   display: grid;
   grid-template-columns: 66px 1fr;
-  border: 2px solid #c4e4ff;
+  border: 2px solid #094b65;
   margin: 10px;
   padding: 16px;
   border-radius: 20px;
@@ -278,7 +297,7 @@ nav .nav-container ul li img {
   top: 40%;
   left: 49%;
   font-size: 1.5rem;
-  color: #77b7ff;
+  color: #e8f1fe;
 }
 .card-container .card-left img {
   height: 52px;
@@ -357,10 +376,10 @@ nav .nav-container ul li img {
   transform: scale(1.2) translate(0px, 0px);
 }
 .card-container .card-right .card-header .pseudo span .fas {
-  color: #77b7ff;
+  color: #e8f1fe;
 }
 .card-container .card-right .card-header .pseudo span .far {
-  color: #c4e4ff;
+  color: #094b65;
 }
 .card-container .card-right .card-header span {
   font-style: italic;
@@ -382,17 +401,17 @@ nav .nav-container ul li img {
 }
 .card-container .card-right .update-post textarea {
   font-size: 1.3rem;
-  border: 1px solid #c4e4ff;
+  border: 1px solid #094b65;
   padding: 10px;
   border-radius: 20px 20px 6px 20px;
 }
 .card-container .card-right .update-post .button-container .btn {
-  background: #c4e4ff;
+  background: #094b65;
   width: 240px;
   transform: translateY(-3px);
 }
 .card-container .card-right .update-post .button-container .btn:hover {
-  background: #77b7ff;
+  background: #e8f1fe;
   width: 250px;
   letter-spacing: 1px;
 }
@@ -415,7 +434,7 @@ nav .nav-container ul li img {
 .card-container .card-right .button-container div {
   padding: 5px 9px;
   margin-left: 5px;
-  background: #c4e4ff;
+  background: #094b65;
   border-radius: 50px;
   transition: 0.1s;
   cursor: pointer;
@@ -456,14 +475,14 @@ nav .nav-container ul li img {
   transform: translate(29px, 2px);
 }
 .card-container .card-right .comment-container.client {
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
   border: none;
   border-radius: 20px 20px 6px 20px;
 }
 .card-container .card-right .comment-container {
   display: grid;
   grid-template-columns: 50px 1fr;
-  border: 1px solid #c4e4ff;
+  border: 1px solid #094b65;
   padding: 15px;
   margin: 5px 0;
   border-radius: 20px 20px 20px 6px;
@@ -515,7 +534,7 @@ nav .nav-container ul li img {
   margin-top: 8px;
 }
 .card-container .card-right .comment-container .edit-comment {
-  color: #c4e4ff;
+  color: #094b65;
 }
 .card-container .card-right .comment-container .edit-comment img {
   float: right;
@@ -534,7 +553,7 @@ nav .nav-container ul li img {
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form label {
   background: rgb(253, 253, 253);
-  color: #77b7ff;
+  color: #e8f1fe;
   padding: 6px 12px 5px;
   border-radius: 20px 20px 20px 6px;
   cursor: pointer;
@@ -567,26 +586,26 @@ nav .nav-container ul li img {
   cursor: pointer;
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form .btn span:hover {
-  background: #c4e4ff;
+  background: #094b65;
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form .btn span img {
   transform: translate(-5px, 0);
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form .btn input[type=submit] {
-  background: #c4e4ff;
+  background: #094b65;
   width: inherit;
   transition: 0.2s;
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form .btn input[type=submit]:hover {
   width: inherit;
-  background: #77b7ff;
+  background: #e8f1fe;
 }
 .card-container .card-right .comment-form {
   margin-top: 6px;
 }
 .card-container .card-right .comment-form input[type=text] {
   width: 100%;
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
   border-radius: 20px 20px 6px 20px;
   padding: 20px;
   font-size: 1.4rem;
@@ -598,23 +617,23 @@ nav .nav-container ul li img {
   margin-top: 4px;
   padding: 12px 16px;
   width: 120px;
-  background: #c4e4ff;
+  background: #094b65;
   border-radius: 20px 6px 20px 20px;
   transition: 0.2s;
   float: right;
 }
 .card-container .card-right .comment-form input[type=submit]:hover {
-  background: #77b7ff;
+  background: #e8f1fe;
   letter-spacing: 2px;
   width: 130px;
 }
 .card-container .card-right .comment-form button {
   float: right;
-  background: #77b7ff;
+  background: #e8f1fe;
   transition: 0.2s;
 }
 .card-container .card-right .comment-form button:hover {
-  background: #c4e4ff;
+  background: #094b65;
 }
 .card-container .card-right .like-container span {
   font-size: 1.02rem;
@@ -637,11 +656,11 @@ nav .nav-container ul li img {
   width: 150px;
 }
 .card-container .update-post .button-container button:nth-child(1) {
-  background: #77b7ff;
+  background: #e8f1fe;
 }
 
 .connection-from {
-  border: 2px solid #77b7ff;
+  border: 2px solid #094b65;
   width: 400px;
   margin: 35px auto 0;
   padding: 20px 0;
@@ -660,7 +679,7 @@ nav .nav-container ul li img {
   justify-content: space-around;
 }
 .connection-from ul li {
-  background: #c4e4ff;
+  background: #094b65;
   color: rgb(253, 253, 253);
   width: 130px;
   padding: 10px 0;
@@ -670,10 +689,10 @@ nav .nav-container ul li img {
   box-shadow: 3px 3px 1px rgba(51, 51, 51, 0.418);
 }
 .connection-from ul li:hover {
-  background: #77b7ff;
+  background: #094b65;
 }
 .connection-from .active-btn {
-  background: #77b7ff;
+  background: #094b65;
 }
 .connection-from form {
   width: 400px;
@@ -700,12 +719,14 @@ nav .nav-container ul li img {
 }
 .profil-page .connection-form {
   border: none;
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
   min-width: 490px;
   width: 90%;
   text-align: center;
   margin: 0 auto;
-  padding: 20px;
+  margin-top: 100px;
+  justify-content: center;
+  allign-items: center;
   border-radius: 20px;
 }
 @media screen and (max-width: 550px) {
@@ -716,6 +737,7 @@ nav .nav-container ul li img {
 .profil-page .connection-form .form-container {
   display: grid;
   grid-template-columns: 30% 70%;
+  box-shadow: #094b65;
 }
 @media screen and (max-width: 550px) {
   .profil-page .connection-form .form-container {
@@ -735,10 +757,10 @@ nav .nav-container ul li img {
   }
 }
 .profil-page .connection-form .form-container ul .active-btn {
-  background: #77b7ff;
+  background: #e8f1fe;
 }
 .profil-page .connection-form .form-container ul .active-btn:hover {
-  background: #c4e4ff;
+  background: #094b65;
 }
 .profil-page .connection-form .form-container ul li:not(.active-btn):hover {
   transform: translateX(3px);
@@ -758,7 +780,7 @@ nav .nav-container ul li img {
     transform: translateX(-50%);
     width: 80%;
     height: 1px;
-    background: #c4e4ff;
+    background: #094b65;
   }
 }
 .profil-page .connection-form .form-container form input {
@@ -767,9 +789,18 @@ nav .nav-container ul li img {
   font-size: 1.2rem;
   font-family: "font-2", serif;
   border-radius: 20px;
+  background-color: #e8f1fe;
 }
 .profil-page .connection-form .form-container form input:focus {
   box-shadow: 0 0 3px rgba(51, 51, 51, 0.2);
+}
+.profil-page .connection-form .form-container form input[type=submit] {
+  margin-top: 10px;
+  border-radius: 20px;
+  background: #094b65;
+}
+.profil-page .connection-form .form-container form input[type=submit]:hover {
+  letter-spacing: 1px;
 }
 .profil-page .connection-form .form-container form a {
   color: rgb(62, 62, 214);
@@ -811,7 +842,7 @@ nav .nav-container ul li img {
   }
 }
 .profil-page .update-container > div {
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
   border-radius: 20px;
   padding: 25px;
   margin: 20px 10px;
@@ -844,7 +875,7 @@ nav .nav-container ul li img {
   transform: translate(-50%, -50%);
   width: 270px;
   background: rgb(0, 22, 44);
-  color: #c4e4ff;
+  color: #094b65;
   border-radius: 20px;
   display: inline-block;
   padding: 9px 0;
@@ -858,6 +889,7 @@ nav .nav-container ul li img {
   transform: translate(-3px, -50%);
   cursor: pointer;
   padding: 10px 20px;
+  background: #094b65;
 }
 @media screen and (max-width: 1121px) {
   .profil-page .update-container .left-part form input[type=file] {
@@ -867,6 +899,7 @@ nav .nav-container ul li img {
 .profil-page .update-container .left-part form input[type=submit] {
   margin-top: 10px;
   border-radius: 20px;
+  background: #094b65;
 }
 .profil-page .update-container .left-part form input[type=submit]:hover {
   letter-spacing: 1px;
@@ -886,7 +919,7 @@ nav .nav-container ul li img {
 .profil-page .update-container .right-part p,
 .profil-page .update-container .right-part textarea {
   min-height: 80px;
-  border: 1px solid #77b7ff;
+  border: 1px solid #e8f1fe;
   border-radius: 20px 20px 6px 20px;
   padding: 10px 20px;
   font-size: 1.1rem;
@@ -904,8 +937,8 @@ nav .nav-container ul li img {
   margin: 60px 0 10px;
 }
 .profil-page .update-container .right-part h5 {
-  background: #77b7ff;
-  color: rgb(119, 174, 190);
+  background: #e8f1fe;
+  color: #FFFFFF;
   font-family: "font-1", sans-serif;
   margin: 20px 0;
   padding: 12px;
@@ -945,7 +978,7 @@ nav .nav-container ul li img {
   top: 10%;
   left: 50%;
   transform: translate(-100%);
-  background: #c4e4ff;
+  background: #094b65;
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 0 2px rgba(131, 130, 130, 0.356);
@@ -988,10 +1021,10 @@ nav .nav-container ul li img {
   width: 2px;
 }
 .profil-page .popup-profil-container .modal ul::-webkit-scrollbar-track {
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
 }
 .profil-page .popup-profil-container .modal ul::-webkit-scrollbar-thumb {
-  background: #77b7ff;
+  background: #e8f1fe;
 }
 .profil-page .popup-profil-container .modal ul::-webkit-scrollbar-thumb:hover {
   background: #555;
@@ -1018,7 +1051,7 @@ nav .nav-container ul li img {
   text-align: left;
 }
 .profil-page .popup-profil-container .modal ul li .follow-handler button {
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
   border-radius: 20px;
   margin-right: 6px;
 }
@@ -1032,7 +1065,7 @@ nav .nav-container ul li img {
   padding: 16px 40px;
   border-radius: 20px;
   position: relative;
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
 }
 .post-container i {
   font-size: 1.5rem;
@@ -1198,7 +1231,7 @@ nav .nav-container ul li img {
   background: rgb(253, 253, 253);
 }
 .post-container .post-form .footer-form .btn-send .cancel:hover {
-  color: rgb(119, 174, 190);
+  color: #FFFFFF;
   background: rgb(0, 22, 44);
 }
 .post-container .post-form .footer-form .btn-send .send:hover {
@@ -1213,7 +1246,7 @@ nav .nav-container ul li img {
 
 .get-friends-container {
   width: 356px;
-  background: linear-gradient(145deg, #c4e4ff 30%, #ffe1d9 100%);
+  background: linear-gradient(145deg, #094b65 30%, #ffe1d9 100%);
   border-radius: 20px;
   padding: 20px 20px 10px;
 }
@@ -1257,20 +1290,20 @@ nav .nav-container ul li img {
   text-align: right;
 }
 .get-friends-container ul .user-hint span button {
-  background: #77b7ff;
-  color: rgb(119, 174, 190);
+  background: #e8f1fe;
+  color: #FFFFFF;
   padding: 10px 24px 8px;
   transition: 0.2s;
   border-radius: 20px;
   font-size: 0.9rem;
 }
 .get-friends-container ul .user-hint span button:hover {
-  background: rgb(119, 174, 190);
-  color: #77b7ff;
+  background: #FFFFFF;
+  color: #e8f1fe;
 }
 
 .trending-container {
-  background: #c4e4ff;
+  background: #094b65;
   border-radius: 20px;
   margin-bottom: 14px;
   padding: 20px;
@@ -1286,7 +1319,7 @@ nav .nav-container ul li img {
   display: grid;
   align-items: center;
   grid-template-columns: 68px 1fr;
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
   border-radius: 20px;
   padding: 16px;
   box-shadow: 5px 7px 20px 9px rgba(255, 124, 119, 0.1960784314);
@@ -1319,7 +1352,7 @@ nav .nav-container ul li img {
   font-size: 0.9rem;
 }
 .trending-container ul li .trend-content span {
-  color: #77b7ff;
+  color: #e8f1fe;
   font-family: "font-3", serif;
   position: absolute;
   right: 6px;
@@ -1355,7 +1388,7 @@ nav .nav-container ul li img {
   height: 45px;
   width: 45px;
   position: absolute;
-  background: rgb(119, 174, 190);
+  background: #FFFFFF;
   border-radius: 50px;
 }
 .left-nav-container .icons .icons-bis a:hover {
@@ -1366,7 +1399,7 @@ nav .nav-container ul li img {
 }
 @media screen and (max-width: 590px) {
   .left-nav-container .icons .icons-bis a:hover::before {
-    background: #77b7ff;
+    background: #e8f1fe;
     height: 34px;
     width: 34px;
   }
@@ -1385,7 +1418,7 @@ nav .nav-container ul li img {
   height: 40px;
   width: 5px;
   position: absolute;
-  background: #77b7ff;
+  background: #e8f1fe;
   left: -7px;
   bottom: 8px;
   border-radius: 40px;
