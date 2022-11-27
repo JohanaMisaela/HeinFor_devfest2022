@@ -20,11 +20,11 @@
   text-decoration: none;
 }
 *::-moz-selection {
-  background: #e8f1fe;
+  background: #bacce4;
   color: yellow;
 }
 *::selection {
-  background: #e8f1fe;
+  background: #bacce4;
   color: yellow;
 }
 
@@ -49,7 +49,7 @@ textarea:focus {
 button,
 input[type=submit] {
   background: #094b65;
-  color: #e8f1fe;
+  color: #bacce4;
   font-family: "font-3", serif;
   cursor: pointer;
   transition: 0.2s;
@@ -61,7 +61,7 @@ input[type=submit] {
 }
 button:hover,
 input[type=submit]:hover {
-  background: #e8f1fe;
+  background: #bacce4;
   color: #094b65;
 }
 
@@ -120,13 +120,13 @@ body {
   text-align: center;
 }
 .home .main .home-header .connection-form {
-  background: #FFFFFF;
   border-radius: 20px;
+  margin-top: 5%;
+  margin-left: 15%;
   padding: 20px;
   margin-top: 20%;
   padding-bottom: 10%;
   justify-content: center;
-  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -148,10 +148,11 @@ body {
   margin: 0 8px;
 }
 .home .main .home-header .connection-form ul .active-btn {
-  background: #094b65;
+  background: #bacce4;
 }
 .home .main .home-header .connection-form ul .active-btn:hover {
   background: #094b65;
+  color: white;
 }
 .home .main .home-header .connection-form ul li:not(.active-btn):hover {
   transform: translateX(3px);
@@ -163,7 +164,7 @@ body {
   font-family: "font-2", serif;
   border-radius: 20px;
   box-shadow: #094b65;
-  background-color: #e8f1fe;
+  background-color: #bacce4;
   /* background-repeat: no-repeat; */
   background-size: cover;
   background-position: 0 0;
@@ -199,7 +200,7 @@ nav {
   width: 100%;
   height: 45px;
   border-radius: 6px;
-  box-shadow: 18px 1px 0px #e8f1fe, 22px 4px 0px 0px rgb(219, 218, 218);
+  box-shadow: 18px 1px 0px #bacce4, 22px 4px 0px 0px rgb(219, 218, 218);
   z-index: 10;
   top: 0;
 }
@@ -297,7 +298,7 @@ nav .nav-container ul li img {
   top: 40%;
   left: 49%;
   font-size: 1.5rem;
-  color: #e8f1fe;
+  color: #bacce4;
 }
 .card-container .card-left img {
   height: 52px;
@@ -376,7 +377,7 @@ nav .nav-container ul li img {
   transform: scale(1.2) translate(0px, 0px);
 }
 .card-container .card-right .card-header .pseudo span .fas {
-  color: #e8f1fe;
+  color: #bacce4;
 }
 .card-container .card-right .card-header .pseudo span .far {
   color: #094b65;
@@ -411,7 +412,7 @@ nav .nav-container ul li img {
   transform: translateY(-3px);
 }
 .card-container .card-right .update-post .button-container .btn:hover {
-  background: #e8f1fe;
+  background: #bacce4;
   width: 250px;
   letter-spacing: 1px;
 }
@@ -475,7 +476,7 @@ nav .nav-container ul li img {
   transform: translate(29px, 2px);
 }
 .card-container .card-right .comment-container.client {
-  background: #FFFFFF;
+  background: rgba(4, 53, 8, 0.5058823529);
   border: none;
   border-radius: 20px 20px 6px 20px;
 }
@@ -553,7 +554,7 @@ nav .nav-container ul li img {
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form label {
   background: rgb(253, 253, 253);
-  color: #e8f1fe;
+  color: #bacce4;
   padding: 6px 12px 5px;
   border-radius: 20px 20px 20px 6px;
   cursor: pointer;
@@ -598,14 +599,14 @@ nav .nav-container ul li img {
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form .btn input[type=submit]:hover {
   width: inherit;
-  background: #e8f1fe;
+  background: #bacce4;
 }
 .card-container .card-right .comment-form {
   margin-top: 6px;
 }
 .card-container .card-right .comment-form input[type=text] {
   width: 100%;
-  background: #FFFFFF;
+  background: rgba(4, 53, 8, 0.5058823529);
   border-radius: 20px 20px 6px 20px;
   padding: 20px;
   font-size: 1.4rem;
@@ -623,13 +624,13 @@ nav .nav-container ul li img {
   float: right;
 }
 .card-container .card-right .comment-form input[type=submit]:hover {
-  background: #e8f1fe;
+  background: #bacce4;
   letter-spacing: 2px;
   width: 130px;
 }
 .card-container .card-right .comment-form button {
   float: right;
-  background: #e8f1fe;
+  background: #bacce4;
   transition: 0.2s;
 }
 .card-container .card-right .comment-form button:hover {
@@ -656,7 +657,7 @@ nav .nav-container ul li img {
   width: 150px;
 }
 .card-container .update-post .button-container button:nth-child(1) {
-  background: #e8f1fe;
+  background: #bacce4;
 }
 
 .connection-from {
@@ -719,7 +720,7 @@ nav .nav-container ul li img {
 }
 .profil-page .connection-form {
   border: none;
-  background: #FFFFFF;
+  background: rgba(4, 53, 8, 0.5058823529);
   min-width: 490px;
   width: 90%;
   text-align: center;
@@ -757,7 +758,7 @@ nav .nav-container ul li img {
   }
 }
 .profil-page .connection-form .form-container ul .active-btn {
-  background: #e8f1fe;
+  background: #bacce4;
 }
 .profil-page .connection-form .form-container ul .active-btn:hover {
   background: #094b65;
@@ -789,7 +790,7 @@ nav .nav-container ul li img {
   font-size: 1.2rem;
   font-family: "font-2", serif;
   border-radius: 20px;
-  background-color: #e8f1fe;
+  background-color: #bacce4;
 }
 .profil-page .connection-form .form-container form input:focus {
   box-shadow: 0 0 3px rgba(51, 51, 51, 0.2);
@@ -842,7 +843,7 @@ nav .nav-container ul li img {
   }
 }
 .profil-page .update-container > div {
-  background: #FFFFFF;
+  background: rgba(4, 53, 8, 0.5058823529);
   border-radius: 20px;
   padding: 25px;
   margin: 20px 10px;
@@ -919,7 +920,7 @@ nav .nav-container ul li img {
 .profil-page .update-container .right-part p,
 .profil-page .update-container .right-part textarea {
   min-height: 80px;
-  border: 1px solid #e8f1fe;
+  border: 1px solid #bacce4;
   border-radius: 20px 20px 6px 20px;
   padding: 10px 20px;
   font-size: 1.1rem;
@@ -937,8 +938,8 @@ nav .nav-container ul li img {
   margin: 60px 0 10px;
 }
 .profil-page .update-container .right-part h5 {
-  background: #e8f1fe;
-  color: #FFFFFF;
+  background: #bacce4;
+  color: rgba(4, 53, 8, 0.5058823529);
   font-family: "font-1", sans-serif;
   margin: 20px 0;
   padding: 12px;
@@ -1021,10 +1022,10 @@ nav .nav-container ul li img {
   width: 2px;
 }
 .profil-page .popup-profil-container .modal ul::-webkit-scrollbar-track {
-  background: #FFFFFF;
+  background: rgba(4, 53, 8, 0.5058823529);
 }
 .profil-page .popup-profil-container .modal ul::-webkit-scrollbar-thumb {
-  background: #e8f1fe;
+  background: #bacce4;
 }
 .profil-page .popup-profil-container .modal ul::-webkit-scrollbar-thumb:hover {
   background: #555;
@@ -1051,7 +1052,7 @@ nav .nav-container ul li img {
   text-align: left;
 }
 .profil-page .popup-profil-container .modal ul li .follow-handler button {
-  background: #FFFFFF;
+  background: rgba(4, 53, 8, 0.5058823529);
   border-radius: 20px;
   margin-right: 6px;
 }
@@ -1065,7 +1066,7 @@ nav .nav-container ul li img {
   padding: 16px 40px;
   border-radius: 20px;
   position: relative;
-  background: #FFFFFF;
+  background: rgba(4, 53, 8, 0.5058823529);
 }
 .post-container i {
   font-size: 1.5rem;
@@ -1231,7 +1232,7 @@ nav .nav-container ul li img {
   background: rgb(253, 253, 253);
 }
 .post-container .post-form .footer-form .btn-send .cancel:hover {
-  color: #FFFFFF;
+  color: rgba(4, 53, 8, 0.5058823529);
   background: rgb(0, 22, 44);
 }
 .post-container .post-form .footer-form .btn-send .send:hover {
@@ -1290,16 +1291,16 @@ nav .nav-container ul li img {
   text-align: right;
 }
 .get-friends-container ul .user-hint span button {
-  background: #e8f1fe;
-  color: #FFFFFF;
+  background: #bacce4;
+  color: rgba(4, 53, 8, 0.5058823529);
   padding: 10px 24px 8px;
   transition: 0.2s;
   border-radius: 20px;
   font-size: 0.9rem;
 }
 .get-friends-container ul .user-hint span button:hover {
-  background: #FFFFFF;
-  color: #e8f1fe;
+  background: rgba(4, 53, 8, 0.5058823529);
+  color: #bacce4;
 }
 
 .trending-container {
@@ -1319,7 +1320,7 @@ nav .nav-container ul li img {
   display: grid;
   align-items: center;
   grid-template-columns: 68px 1fr;
-  background: #FFFFFF;
+  background: rgba(4, 53, 8, 0.5058823529);
   border-radius: 20px;
   padding: 16px;
   box-shadow: 5px 7px 20px 9px rgba(255, 124, 119, 0.1960784314);
@@ -1352,7 +1353,7 @@ nav .nav-container ul li img {
   font-size: 0.9rem;
 }
 .trending-container ul li .trend-content span {
-  color: #e8f1fe;
+  color: #bacce4;
   font-family: "font-3", serif;
   position: absolute;
   right: 6px;
@@ -1388,7 +1389,7 @@ nav .nav-container ul li img {
   height: 45px;
   width: 45px;
   position: absolute;
-  background: #FFFFFF;
+  background: rgba(4, 53, 8, 0.5058823529);
   border-radius: 50px;
 }
 .left-nav-container .icons .icons-bis a:hover {
@@ -1399,7 +1400,7 @@ nav .nav-container ul li img {
 }
 @media screen and (max-width: 590px) {
   .left-nav-container .icons .icons-bis a:hover::before {
-    background: #e8f1fe;
+    background: #bacce4;
     height: 34px;
     width: 34px;
   }
@@ -1418,7 +1419,7 @@ nav .nav-container ul li img {
   height: 40px;
   width: 5px;
   position: absolute;
-  background: #e8f1fe;
+  background: #bacce4;
   left: -7px;
   bottom: 8px;
   border-radius: 40px;

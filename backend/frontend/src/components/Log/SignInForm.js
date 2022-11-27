@@ -39,6 +39,9 @@ const SignInForm = () => {
 
   return (
     <form action="" onSubmit={handleLogin} id="sign-up-form">
+      <br/>
+      <br/>
+      <br/>
       <label htmlFor="email">Email</label>
       <br />
       <input

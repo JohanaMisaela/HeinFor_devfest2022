@@ -65,9 +65,9 @@ const SignUpForm = () => {
         </>
       ) : (
         <form action="" onSubmit={handleRegIster}>
+          <br/>
           <label htmlFor="pseudo">Pseudo</label>
           <div className="pseudo error"></div>
-          <br />
           <input
             type="text"
             name="pseudo"
@@ -117,6 +117,7 @@ const SignUpForm = () => {
               conditions generales
             </a>{" "}
           </label>
+      <br/>
           <br />
           <input type="submit" value="Valider inscription" />
         </form>
