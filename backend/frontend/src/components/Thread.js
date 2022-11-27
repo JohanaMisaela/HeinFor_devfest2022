@@ -21,6 +21,7 @@ const Thread = () => {
   };
 
   useEffect(() => {
+    console.log("po", posts);
     if (loadPost) {
       dispatch(getPosts(count));
       setLoadPost(false);

@@ -4,7 +4,8 @@ import { isEmpty } from "../Utils";
 import FollowHandler from "./FollowHandler";
 
 const FriendsHint = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [playOnce, setPlayOnce] = useState(true);
   const [friendsHint, setFriendsHints] = useState([]);
   const userData = useSelector((state) => state.userReducer);

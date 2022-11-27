@@ -22,7 +22,7 @@ const Home = () => {
       <div className="right-side">
         <div className="right-side-container">
           <div className="wrapper">
-            <Trends />
+            {/* <Trends /> */}
             {uid && <FriendsHint />}
           </div>
         </div>

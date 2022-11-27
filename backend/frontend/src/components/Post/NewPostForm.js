@@ -25,12 +25,13 @@ const NewPostForm = () => {
 
   const handlePost = async () => {
     if (message || postPicture || video) {
-      console.log(userData);
+      // console.log(userData);
       const data = new FormData();
       data.append("posterId", userData._id);
       data.append("isEvent", userData.status ? 1 : 0);
       data.append("type", "formation");
-      data.append("type", userData.quartier);
+      data.append("text", message);
+      data.append("quartier", userData.quartier);
       if (file) data.append("file", file);
       data.append("video", video);
 

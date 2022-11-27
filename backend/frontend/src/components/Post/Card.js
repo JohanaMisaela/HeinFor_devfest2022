@@ -25,6 +25,7 @@ const Card = ({ post }) => {
   };
 
   useEffect(() => {
+    console.log(usersData.users._id, post.image);
     isEmpty(usersData[0]) && setIsLoading(false);
   }, [usersData]);
 
@@ -37,7 +38,7 @@ const Card = ({ post }) => {
           <div className="card-left">
             <img
               src={
-                isEmpty(usersData[0])
+                !isEmpty(usersData.users)
                   ? usersData.users
                       .map((user) => {
                         if (user._id === post.posterId) return user.picture;
@@ -53,14 +54,13 @@ const Card = ({ post }) => {
             <div className="card-header">
               <div className="pseudo">
                 <h3>
-                  {isEmpty(usersData[0])
+                  {!isEmpty(usersData.users)
                     ? usersData.users.map((user) => {
-                        if (user._id === post.posterId) return user.pseudo;
+                        if (user._id === post.posterId) return user.name;
                         else return null;
                       })
                     : null}
                 </h3>
-                {/* l'user ne peut lui suivre */}
                 {post.posterId !== userData._id && (
                   <FollowHandler idToFollow={post.posterId} type="card" />
                 )}
@@ -68,7 +68,7 @@ const Card = ({ post }) => {
               <span> {dateParsers(post.createdAt)} </span>
             </div>
             {isUpdated === false ? (
-              <p> {post.message} </p>
+              <p> {post.text} </p>
             ) : (
               <div className="update-post">
                 <textarea
@@ -86,8 +86,8 @@ const Card = ({ post }) => {
               </div>
             )}
 
-            {post.picture && (
-              <img src={post.picture} alt="card-pic" className="card-pic" />
+            {post.image && (
+              <img src={post.image} alt={post.image} className="card-pic" />
             )}
             {post.video && (
               <iframe

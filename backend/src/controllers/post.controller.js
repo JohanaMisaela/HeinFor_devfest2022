@@ -31,7 +31,7 @@ module.exports.createPost = async (req, res) => {
     console.log("Post created" + fileName);
 
     await writeFile(
-      join(__dirname, `../../../frontend/public/images/posts`, fileName),
+      join(__dirname, `../../frontend/public/images/posts`, fileName),
       req.file.buffer
     )
       // .then((res) => res.send({ message: "ok" }))
