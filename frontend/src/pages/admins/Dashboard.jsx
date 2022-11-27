@@ -6,7 +6,7 @@ function Dashboard() {
     <div>
       <Navbar />
    
-      Dashboard
+      <NewPostForm/>
 
     </div>
   )

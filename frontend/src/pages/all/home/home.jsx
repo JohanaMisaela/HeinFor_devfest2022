@@ -55,7 +55,7 @@ function App() {
         <img src={b1} id="bird1" />
         <img src={b2} id="bird2" />
         <img src={fo} id="forest" />
-        <a href="/login" id="btn">Log in</a>
+        <NavLink to={"/login"} id="btn">Log in</NavLink>
         <img src={ro} id="rocks" />
         <img src={wa} id="water" />
       </div>
