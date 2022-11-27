@@ -162,12 +162,8 @@ function Plainte_table() {
             // trieDechet,
             // nettoyage,
             <>
-            <div className="p-3">
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <div style={{ maxWidth: '100%' }} className='p-3'>
+            <div className="container" style={{ margin: "35px"}}>
+                <div style={{ maxWidth: '100%' }}>
                     <MaterialTable
                     icons={tableIcons}
                         columns={colums}
@@ -206,17 +202,17 @@ function Plainte_table() {
                                             }}
                                         >
                                             {
-                                                rowData.idBadge && rowData.idBadge.length > 0 &&  <div><button id='button' onClick={()=>openBadgePopup(rowData.idBadge)} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Badge</span></button>{' '}<NavLink id='button' to={`/addBadge/${rowData.idBadge}`} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Attrib Badge</span></NavLink>{' '}</div>
+                                                rowData.idBadge && rowData.idBadge.length > 0 &&  <div><button id='button' onClick={()=>openBadgePopup(rowData.idBadge)} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Badge</span></button>{' '}<button><NavLink id='button' to={`/addBadge/${rowData.idBadge}`} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Attrib Badge</span></NavLink></button>{' '}</div>
                                             }
                                             {
-                                                (!rowData.idBadge || rowData.idBadge.length === 0) &&  <div><NavLink id='button' to={`/attribBadge/${rowData._id}`} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Premier Badge</span></NavLink>{' '}</div>
+                                                (!rowData.idBadge || rowData.idBadge.length === 0) &&  <div><button><NavLink id='button' to={`/attribBadge/${rowData._id}`} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Premier Badge</span></NavLink></button>{' '}</div>
                                             }
                                         </div>
                                     );
                                 }
                             }
                         ]} />
-                </div>
+                        </div>
             </div></>
           )
 }
