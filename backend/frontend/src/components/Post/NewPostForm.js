@@ -31,6 +31,7 @@ const NewPostForm = () => {
       data.append("isEvent", userData.status ? 1 : 0);
       data.append("type", "formation");
       data.append("text", message);
+      data.append("isPlainte", !userData.status ? 1 : 0);
       data.append("quartier", userData.quartier);
       if (file) data.append("file", file);
       data.append("video", video);

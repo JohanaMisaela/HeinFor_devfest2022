@@ -77,6 +77,18 @@ const UserSchema = new mongoose.Schema(
       type: [String],
       // les events suivi par user
     },
+    reboisement: {
+      type: Number,
+    },
+    recyclage: {
+      type: Number,
+    },
+    trieDechet: {
+      type: Number,
+    },
+    nettoyage: {
+      type: Number,
+    },
   },
   {
     timestamps: true,

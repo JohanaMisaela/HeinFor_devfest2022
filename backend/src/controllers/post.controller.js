@@ -44,6 +44,7 @@ module.exports.createPost = async (req, res) => {
   const newPost = new Post({
     posterId: req.body.posterId,
     isEvent: req.body.isEvent,
+    isPlainte: req.body.isPlainte,
     type: req.body.type,
     text: req.body.text,
     quartier: req.body.quartier,

@@ -35,6 +35,11 @@ const PostSchema = new mongoose.Schema(
       // si event
       type: [String],
     },
+    isPlainte: {
+      // si event
+      type: Boolean,
+      default: false,
+    },
     comments: {
       type: [
         {

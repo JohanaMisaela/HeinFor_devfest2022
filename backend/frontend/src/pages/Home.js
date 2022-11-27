@@ -21,15 +21,13 @@ const Home = () => {
       </div>
       <div className="right-side">
         <div className="right-side-container">
-<<<<<<< HEAD
           <div className="wrapper">
-            {/* <Trends /> */}
-=======
-          {/* <div className="wrapper">
             <Trends />
->>>>>>> 5d39f0fcf2f73fe60122aad921f8a7d203ab6291
-            {uid && <FriendsHint />}
-          </div> */}
+            <div className="wrapper">
+              <Trends />
+              {uid && <FriendsHint />}
+            </div>
+          </div>
         </div>
       </div>
     </div>
