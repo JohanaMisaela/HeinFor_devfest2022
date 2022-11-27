@@ -65,7 +65,7 @@ function events_table() {
               filtering: true,
               exportButton: true,
               headerStyle: {
-                backgroundColor: "green",
+                backgroundColor: "#094b65",
                 color: "#FFF",
                 fontSize: "17px",
                 textAlign: "center",
