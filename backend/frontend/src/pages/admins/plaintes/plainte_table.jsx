@@ -83,6 +83,10 @@ function Plainte_table() {
   ];
   return (
     <div className="container p-3">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <div style={{ maxWidth: "100%" }} className="p-3">
         <MaterialTable
           columns={colums}
@@ -98,7 +102,7 @@ function Plainte_table() {
             filtering: true,
             exportButton: true,
             headerStyle: {
-              backgroundColor: "green",
+              backgroundColor: "#094b65",
               color: "#FFF",
               fontSize: "17px",
               textAlign: "center",
