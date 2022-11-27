@@ -17,9 +17,12 @@ const Home = () => {
         <div className="home-header">
           {uid ? <NewPostForm /> : <Log signin={true} signup={false} />}
         </div>
+        {uid ? 
         <Thread />
+        : null}
       </div>
       <div className="right-side">
+      {uid ? 
       <div className="right-side-container">
           <div className="wrapper">
             <Trends />
@@ -28,6 +31,7 @@ const Home = () => {
              </div>
         </div>
       </div>
+      :null}
       </div>  
     </div>
   );
