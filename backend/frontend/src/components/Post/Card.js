@@ -9,6 +9,7 @@ import CardComments from "./CardComments";
 
 const Card = ({ post }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [bol, setbol] = useState(Boolean);
   const [isUpdated, setIsUpdated] = useState(false);
   const [textUpdate, setTextUpdate] = useState(null);
   const [showComments, setTShowComments] = useState(false);
@@ -64,7 +65,12 @@ const Card = ({ post }) => {
                   <FollowHandler id={post.posterId} type="card" />
                 )}
               </div>
-              <span> {dateParsers(post.createdAt)} </span>
+              <span>
+                {" "}
+                {dateParsers(post.createdAt)} <br />{" "}
+              </span>
+              <br />
+              {post.isPlainte ? "Sondage" : "Publication"}
             </div>
             {isUpdated === false ? (
               <p> {post.text} </p>
@@ -100,28 +106,34 @@ const Card = ({ post }) => {
               ></iframe>
             )}
 
-            {userData._id === post.posterId && (
-              <div className="button-container">
-                <div onClick={() => setIsUpdated(!isUpdated)}>
-                  <img src="./img/icons/edit.svg" alt="edit" />
+            <>
+              {userData._id === post.posterId && (
+                <div className="button-container">
+                  <div onClick={() => setIsUpdated(!isUpdated)}>
+                    <img src="./img/icons/edit.svg" alt="edit" />
+                  </div>
+                  <DeleteCard post={post._id} />
                 </div>
-                <DeleteCard post={post._id} />
-              </div>
-            )}
+              )}
 
-            <div className="card-footer">
-              <div className="comment-icon">
-                <img
-                  src="./img/icons/message1.svg"
-                  onClick={() => setTShowComments(!showComments)}
-                  alt="comment"
-                />
-                <span> {post.comments.length} </span>
+              <div className="card-footer">
+                <div className="comment-icon">
+                  <img
+                    src="./img/icons/message1.svg"
+                    onClick={() => setTShowComments(!showComments)}
+                    alt="comment"
+                  />
+                  <span> {post.comments.length} </span>
+                </div>
+                {!post.isPlainte ? (
+                  <LikeButton post={post} />
+                ) : (
+                  <input type="radio" value={() => setbol(!bol)} />
+                )}
+                <img src="./img/icons/share.svg" alt="share " />
               </div>
-              <LikeButton post={post} />
-              <img src="./img/icons/share.svg" alt="share " />
-            </div>
-            {showComments && <CardComments post={post} />}
+              {showComments && <CardComments post={post} />}
+            </>
           </div>
         </>
       )}

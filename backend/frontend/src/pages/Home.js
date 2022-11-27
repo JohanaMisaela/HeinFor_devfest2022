@@ -22,6 +22,16 @@ const Home = () => {
         : null}
       </div>
       <div className="right-side">
+<<<<<<< HEAD
+        <div className="right-side-container">
+          <div className="wrapper">
+            <Trends />
+            <div className="wrapper">
+              <Trends />
+              {uid && <FriendsHint />}
+            </div>
+          </div>
+=======
       {uid ? 
       <div className="right-side-container">
           <div className="wrapper">
@@ -29,6 +39,7 @@ const Home = () => {
          <div className="wrapper">
                 <Trends />
              </div>
+>>>>>>> 269bfb9c475fb3515c2a5d308ef8ba822b5b0386
         </div>
       </div>
       :null}
