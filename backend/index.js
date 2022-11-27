@@ -20,7 +20,7 @@ const corsOption = {
   methods: "GET,PUT,POST,PATCH,DELETE,HEAD",
   prefLightContinue: false,
 };
-app.use(cors(corsOption));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
