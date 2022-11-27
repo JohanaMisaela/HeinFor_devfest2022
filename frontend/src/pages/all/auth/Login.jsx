@@ -13,10 +13,9 @@ function Login() {
     e.preventDefault();
 
     const data = { email, pwd: password };
-    console.log(data);
     const res = await axios({
       method: "POST",
-      url: `http://localhost:5000/api/user/login`,
+      url: `${process.env.REACT_APP_API_URL}/api/user/login`,
       data: data,
     })
       .then((res) => {
@@ -26,7 +25,8 @@ function Login() {
           title: "Logged successfully",
           showConfirmButton: true,
         });
-        navigate("/dashboard");
+        navigate("/");
+        // window.location = "/";
       })
       .catch((err) => {
         Swal.fire({
