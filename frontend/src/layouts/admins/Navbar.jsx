@@ -17,6 +17,9 @@ function Navbar() {
     <li><a href="#0">Contact</a></li>
   </ul>
 </nav>
+<div className='espace'>
+
+</div>
     </>
   )
 }
