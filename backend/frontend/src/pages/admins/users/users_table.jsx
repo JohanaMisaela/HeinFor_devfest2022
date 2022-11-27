@@ -49,6 +49,7 @@ const tableIcons = {
 function Plainte_table() {
     const link = "http://localhost:5000/api/user/getUsers/"
     const [users, setUsers] = useState([])
+    const [badge, setBadge] = useState()
     const getUsers = async () => {
         axios.get(link).then(
             res => {
@@ -58,7 +59,13 @@ function Plainte_table() {
         )
 
     }
-    const openBadgePopup = () => {
+    const openBadgePopup = async (idBadge) => {
+        await axios.get(`http://localhost:5000/api/badge/${idBadge}`).then(
+            res => {
+                setBadge(res.data)
+                console.log(res.data)
+            }
+        )
         Swal.fire({
             title: 'Badges 🤩',
             text: 'Voici la listes des badges de cet utilisateur',
@@ -73,7 +80,7 @@ function Plainte_table() {
                 <div className="col">
                 <img className='img-icon' src=${reboisement} alt="reboisement" />
                 </div>
-                <div className="col nbr">12</div>
+                <div className="col nbr">${badge.reboisement}</div>
             </div>
             </div>
             <div className="col-lg-6">
@@ -82,7 +89,7 @@ function Plainte_table() {
                 <div className="col">
                 <img className='img-icon' src=${triDechet} alt="triDechet" />
                 </div>
-                <div className="col nbr">12</div>
+                <div className="col nbr">${badge.trieDechet}</div>
             </div>
             </div>
             </div>
@@ -93,7 +100,7 @@ function Plainte_table() {
                 <div className="col">
                 <img className='img-icon' src=${nettoyage} alt="nettoyage" />
                 </div>
-                <div className="col nbr">12</div>
+                <div className="col nbr">${badge.nettoyage}</div>
             </div>
             </div>
             <div className="col-lg-6">
@@ -102,7 +109,7 @@ function Plainte_table() {
                 <div className="col">
                 <img className='img-icon' src=${recyclage} alt="recyclage" />
                 </div>
-                <div className="col nbr">12</div>
+                <div className="col nbr">${badge.recyclage}</div>
             </div>
             </div>
             </div>
@@ -199,7 +206,7 @@ function Plainte_table() {
                                             }}
                                         >
                                             {
-                                                rowData.idBadge && rowData.idBadge.length > 0 &&  <div><button id='button' onClick={openBadgePopup} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Badge</span></button>{' '}<NavLink id='button' to={`/addBadge/${rowData.idBadge}`} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Attrib Badge</span></NavLink>{' '}</div>
+                                                rowData.idBadge && rowData.idBadge.length > 0 &&  <div><button id='button' onClick={()=>openBadgePopup(rowData.idBadge)} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Badge</span></button>{' '}<NavLink id='button' to={`/addBadge/${rowData.idBadge}`} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Attrib Badge</span></NavLink>{' '}</div>
                                             }
                                             {
                                                 (!rowData.idBadge || rowData.idBadge.length === 0) &&  <div><NavLink id='button' to={`/attribBadge/${rowData._id}`} style={{ textDecoration: 'none', border: "none" }}><span className="btn btn-warning btn-sm"><i class="fa-regular fa-badge-sheriff"></i>Premier Badge</span></NavLink>{' '}</div>
