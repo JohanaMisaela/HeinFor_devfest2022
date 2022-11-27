@@ -20,29 +20,34 @@ const Navbar = () => {
           </NavLink>
         </div>
        
-        <div>
+
+        {uid ? (
+          <>
+          <div>
             <ul  style={{marginLeft:200+"px"}}>
               <li  style={{marginRight:10+"px"}}>
                 <a href="" >
-                  <NavLink activeClassName="active" to={`/`}>
+                  <NavLink activeClassName="active" to={`/home`}>
                     Accueil   
                   </NavLink>
                 </a>
               </li>
               <li  style={{marginRight:10+"px"}}>
-                <a href="#sec">
+                <a href="#evenement">
                   <NavLink activeClassName="active" to={`/events`}>
                     Evènnement
                   </NavLink>
                 </a>
               </li>
               <li  style={{marginRight:10+"px"}}>
-                <a href="">Contact</a>
+                <a href="#Pleinte">
+                <NavLink activeClassName="active" to={`/complaints`}>
+                  Plaintes
+                </NavLink>
+                  </a>
               </li>
             </ul>
         </div>
-
-        {uid ? (
           <ul>
             <li></li>
             <li className="welcome">
@@ -52,9 +57,9 @@ const Navbar = () => {
             </li>
             <Logout />
           </ul>
+          </>
         ) : (
           <ul>
-            <li></li>
             <li>
               <NavLink to="/home">
                 <img src="./img/icons/login.svg" alt="login" style={{display:"inline-block"}} /> <span>Login</span>

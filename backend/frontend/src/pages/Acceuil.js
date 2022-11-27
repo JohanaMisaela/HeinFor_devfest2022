@@ -5,9 +5,14 @@ import b2 from "./../styles/assets/img/bird2.png";
 import fo from "./../styles/assets/img/forest.png";
 import ro from "./../styles/assets/img/rocks.png";
 import wa from "./../styles/assets/img/water.png";
+import { UidContext } from "./../components/appContext";
+import { useSelector } from "react-redux";
+import React, { useContext } from "react";
 
 
 function Acceuil() {
+  const uid = useContext(UidContext);
+  const userData = useSelector((state) => state.userReducer);
     const text = document.getElementById("text");
     const bird1 = document.getElementById("bird1");
     const bird2 = document.getElementById("bird2");
@@ -45,9 +50,15 @@ function Acceuil() {
           <img src={b1} id="bird1" />
           <img src={b2} id="bird2" />
           <img src={fo} id="forest" />
-          <NavLink to={"/login"} id="btn">
-            Log in
-          </NavLink>
+          {uid ? null : 
+          (
+            <NavLink to={"/login"} id="btn">
+              Log in
+            </NavLink>
+          )
+          
+          }
+          
           <img src={ro} id="rocks" />
           <img src={wa} id="water" />
         </div>
