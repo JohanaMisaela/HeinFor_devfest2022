@@ -154,6 +154,11 @@ const update = async (rowData, id) => {
   }
     return (
         <div style={{ maxWidth: '100%' }}>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+
           <MaterialTable
             columns={colums}
             data={events}

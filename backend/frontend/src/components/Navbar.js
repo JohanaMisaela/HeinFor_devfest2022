@@ -74,7 +74,7 @@ const Navbar = () => {
           <ul>
             <li>
               <NavLink to="/home">
-                <img src="./img/icons/login.svg" alt="login" style={{display:"inline-block"}} /> <span>Login</span>
+                <img src="./img/icons/login.svg" alt="login" style={{display:"inline-block", float:"right"}} /> <span>Login</span>
                 <p> {uid}  </p>
               </NavLink>
             </li>
