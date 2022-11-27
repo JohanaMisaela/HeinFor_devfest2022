@@ -5,8 +5,7 @@ function Dashboard() {
   return (
     <div>
       <Navbar />
-   
-      <NewPostForm/>
+      Dashboard
 
     </div>
   )
