@@ -4,22 +4,23 @@ import PostItem from "./../../components/admins/postItem";
 import AddPost from "./../../components/admins/addPost";
 import * as AOS from "aos";
 import "./../../assets/dashboard.css";
-
+import Feuille from'./../../assets/feuilles.png'
 function Dashboard() {
   useEffect(() => {
     AOS.init();
   }, []);
 
   return (
-    <div>
+    
+    <div id="feuille">
+      
       <div>
-        <Navbar />
-        <AddPost />
-        <section className="light">
-          <div className="container py-2">
-            <div className="h1 text-center text-dark" id="pageHeaderTitle">
-              Publications
-            </div>
+      <Navbar />
+      
+      <AddPost/>
+      <section className="light">
+	<div className="container py-2">
+		<div className="h1 text-center text-dark" id="pageHeaderTitle"></div>
 
             <article className="postcard light blue">
               <a className="postcard__img_link" href="#">
