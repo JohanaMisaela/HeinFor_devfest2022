@@ -156,6 +156,10 @@ function Plainte_table() {
             // nettoyage,
             <>
             <div className="p-3">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 <div style={{ maxWidth: '100%' }} className='p-3'>
                     <MaterialTable
                     icons={tableIcons}
@@ -171,7 +175,7 @@ function Plainte_table() {
                             filtering: true,
                             exportButton: true,
                             headerStyle: {
-                                backgroundColor: "green",
+                                backgroundColor: "#094b65",
                                 color: "#FFF",
                                 fontSize: "17px",
                                 textAlign: "center",
