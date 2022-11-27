@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { UidContext } from "./appContext";
 import { useSelector } from "react-redux";
 import Logout from "./Log/Logout";
+import Logo from './../styles/assets/img/heinLogo.png'
 
 const Navbar = () => {
   const uid = useContext(UidContext);
@@ -14,7 +15,7 @@ const Navbar = () => {
         <div className="logo">
           <NavLink to="/">
             <div className="logo">
-              <img src="" alt="logo" />
+              <img src={Logo} alt="logo"  style={{width: 50+"px", height: 50+"px" }}/>
               <h3>HeinFor</h3>
             </div>
           </NavLink>
@@ -46,6 +47,17 @@ const Navbar = () => {
                 </NavLink>
                   </a>
               </li>
+              {
+                userData.status === false ? 
+                <li  style={{marginRight:10+"px"}}>
+                <a href="#Users">
+                <NavLink activeClassName="active" to={`/users`}>
+                  Badges
+                </NavLink>
+                  </a>
+              </li>
+              : null
+              }
             </ul>
         </div>
           <ul>

@@ -22,10 +22,10 @@ const Home = () => {
       <div className="right-side">
       <div className="right-side-container">
           <div className="wrapper">
-            {/* <Trends /> */}
-          {/* <div className="wrapper">
+            <Trends />
+         <div className="wrapper">
                 <Trends />
-             </div> */}
+             </div>
         </div>
       </div>
       </div>  
