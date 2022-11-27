@@ -7,6 +7,8 @@ import ro from "./../../../assets/rocks.png";
 import wa from "./../../../assets/water.png";
 import { useEffect } from "react";
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 function App() {
   const text = document.getElementById("text");
   const bird1 = document.getElementById("bird1");
@@ -103,21 +105,12 @@ function App() {
           obcaecati sint molestias ad repellat velit enim quidem nam qui pariatur dolores minus,
           distinctio ipsam numquam, soluta quibusdam quisquam labore amet. Ipsum labore
           cum delectus adipisci quibusdam rerum, obcaecati beatae.
-          <br /><br /> inventore optio aspernatur, praesentium
-          consequatur commodi assumenda tenetur accusamus vitae dolorem illo incidunt,
-          accusantium sequi nemo recusandae blanditiis dolor alias dignissimos quam.
-          Tempore placeat eveniet exercitationem in ipsam itaque a dolore delectus provident
-          ipsa ullam atque temporibus officiis rerum qui dolores iure consequuntur doloribus
-          ipsum voluptas, dolor quo! Labore explicabo dolorem maiores similique dignissimos a
-          fugiat illo doloribus minus sit hic exercitationem eveniet eaque molestias corporis
-          inventore tempore maxime quaerat ullam, dolore iure. At deleniti vero dolor error quo
-          obcaecati sint molestias ad repellat velit enim quidem nam qui pariatur dolores minus,
-          distinctio ipsam numquam, soluta quibusdam quisquam labore amet. Ipsum labore
-          cum delectus adipisci quibusdam rerum, obcaecati beatae.
+          <br /><br />
 
         </p>
       </div>
-    </div></>
+    </div>
+    </>
   );
 }
 
