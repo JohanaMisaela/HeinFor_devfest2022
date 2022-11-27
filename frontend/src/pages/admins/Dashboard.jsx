@@ -14,7 +14,7 @@ function Dashboard() {
     <div>
       <div>
       <Navbar />
-      <AddPost />
+      <AddPost/>
       <section className="light">
 	<div className="container py-2">
 		<div className="h1 text-center text-dark" id="pageHeaderTitle">Publications</div>

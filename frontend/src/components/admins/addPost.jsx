@@ -64,7 +64,7 @@ const handlePicture = (e) => {
       };
 
   return (
-    <div className="card my-4 mycard mx-auto" data-aos="fade-up">
+    <div className="card my-4 mycard mx-auto mt-5" data-aos="fade-up">
         <div className="card-header">
             <div className="row">
                 <div className="col-md-1 col-xs-5 mx-2">
