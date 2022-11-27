@@ -64,15 +64,16 @@ function AddPost() {
   };
 
   return (
+    
     <div className="card my-4 mycard mx-auto mt-5" data-aos="fade-up">
       <div className="card-header">
         <div className="row">
-          <div className="col-md-1 col-xs-5 mx-2">
-            <a>
+          <div className="col-md-1 col-xs-5 mx-2" id="photo" >
+            <a >
               <img src="" alt="photo" />
             </a>
           </div>
-          <div className="col-sm-10">
+          <div className="col-sm-10" style={{display:"inline-block"}}>
             <div className="name">
               <a className="text-dark">RANDRIAMANANTENA Lovamanitra Mario</a>
               <br />
@@ -82,14 +83,7 @@ function AddPost() {
               >
                 lovamanitramario@gmail.com
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <form onSubmit={handleSubmit}>
-        <div className="card-body p-4">
-          <h4>Créer une publication</h4>
-          <div>
+              <div style={{display:"inline-block" , float:"right"}}>
             <select
               name="type"
               type="string"
@@ -104,8 +98,19 @@ function AddPost() {
               <option value="Normal">Partage</option>
             </select>
           </div>
+            </div>
+            
+          </div>
         </div>
-        <div className="card-body p-4">
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <h4>Créer une publication</h4>
+          
+        </div>
+       {type &&(
+        <>
+        <div className="card-body ">
           <textarea
             cols="60"
             rows="3"
@@ -115,7 +120,7 @@ function AddPost() {
             onChange={(e) => setText(e.target.value)}
           ></textarea>
         </div>
-        <div className="card-body p-4">
+        <div>
           {postPicture && (
             <iframe
               src={postPicture}
@@ -123,17 +128,19 @@ function AddPost() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; "
               width={100 + "%"}
               height={260 + "px"}
+             
               //   allowFullScreen
             ></iframe>
           )}
         </div>
-        <div className="card-body p-4">
+        <div style={{marginleft:70+"%"}}>
           <input
             type="file"
             id="file-upload"
             name="file"
             accept=".jpg, .jpeg, .png"
             onChange={(e) => handlePicture(e)}
+            
           />
           {file && (
             <button className="btn btn-danger" onClick={cancelPicture}>
@@ -146,23 +153,24 @@ function AddPost() {
         </div>
         {(type || text) && (
           <>
-            <div className="row comment px-4 text-center">
-              <p className="btn btn-danger" onClick={cancelPost}>
+            <div className="row pb-5" style={{display:"flex" , justifyContent:"center", alignItems:"center"}}>
+              <button className="btn col-4 btn-danger mr-3 ml-3" onClick={cancelPost}>
                 Cancel{" "}
-              </p>
-            </div>
-
-            <div className="row comment px-4 text-center">
-              <button className="btn btn-primary" type="submit">
+              </button>
+              <button className="btn col-4 btn-success mr-3 ml-3" type="submit">
                 {" "}
                 Submit
               </button>
             </div>
+        
           </>
         )}
+        </>
+        )}
+       
       </form>
     </div>
-  );
+  )
 }
 
-export default AddPost;
+export default AddPost
