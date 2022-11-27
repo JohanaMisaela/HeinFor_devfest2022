@@ -10,8 +10,14 @@ const PleinteSchema = new mongoose.Schema(
       type: String,
       maxlength: 500,
     },
-    votes: {
+    voters: {
       type: [String],
+    },
+    status: {
+      type: String,
+    },
+    type: {
+      type: String,
     },
     text: {
       type: String,
@@ -21,4 +27,4 @@ const PleinteSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Pleinte", PleinteSchema);
+module.exports = mongoose.model("Plainte", PleinteSchema);

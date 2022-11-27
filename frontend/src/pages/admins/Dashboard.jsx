@@ -3,7 +3,6 @@ import Navbar from '../../layouts/admins/Navbar'
 import PostItem from './../../components/admins/postItem';
 import AddPost from './../../components/admins/addPost';
 import * as AOS from 'aos';
-import './../../assets/dashboard.css'
 
 function Dashboard() {
   useEffect(()=>{
@@ -12,13 +11,13 @@ function Dashboard() {
 
   return (
     <div>
+      <div>
       <Navbar />
       <AddPost />
       <div data-aos="fade-up">
       <PostItem />
       </div>
-
-<section class="light">
+      <section class="light">
 	<div class="container py-2">
 		<div class="h1 text-center text-dark" id="pageHeaderTitle">Publications</div>
 
@@ -55,6 +54,7 @@ function Dashboard() {
 	
 	</div>
 </section>
+    </div>
     </div>
   )
 }

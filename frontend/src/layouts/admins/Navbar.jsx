@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Navbar() {
-  return (
+   return (
     <>
      <nav class="navbar navbar-expand-lg" style={{backgroundColor: "#094b65"}}>
       <a class="navbar-brand text-light" href="/">Notre Logo</a>
