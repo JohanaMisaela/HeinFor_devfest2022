@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import MaterialTable from 'material-table'
+import '@material-ui/icons';
 
 function events_table() {
   const colums = [
@@ -19,29 +19,25 @@ function events_table() {
           <MaterialTable
             columns={colums}
             data={data}
-            title="Demo Title"
+            grouping={true}
+            title="Liste des evenements"
             options={{
               paging:true,
               pageSize:10,
+              grouping:true,
               pageSizeOptions:10,
               filtering: true,
               exportButton: true,
               headerStyle: {
-                backgroundColor: "#00CCCC",
+                backgroundColor: "green",
                 color: "#FFF",
                 fontSize: "17px",
                 textAlign: "center",
                 fontWeight: "bold"
               },
-              rowStyle: rowData => {
-                if(rowData.envoieEvaluation === '') {
-                  return {backgroundColor: '#FC5F5F'};
-                }
-              },
               cellStyle: {textAlign:'center'},
               filterCellStyle: {
                 textAlign: "center"},
-              grouping: true,
               }}
           />
         </div>
