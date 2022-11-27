@@ -51,6 +51,11 @@ function events_table() {
   ]
     return (
         <div style={{ maxWidth: '100%' }}>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+
           <MaterialTable
             columns={colums}
             data={data}
@@ -65,7 +70,7 @@ function events_table() {
               filtering: true,
               exportButton: true,
               headerStyle: {
-                backgroundColor: "green",
+                backgroundColor: "#094b65",
                 color: "#FFF",
                 fontSize: "17px",
                 textAlign: "center",
