@@ -25,7 +25,7 @@ const NewPostForm = () => {
 
   const handlePost = async () => {
     if (message || postPicture || video) {
-      // console.log(userData);
+      console.log(userData);
       const data = new FormData();
       data.append("posterId", userData._id);
       data.append("isEvent", userData.status ? 1 : 0);
@@ -35,7 +35,7 @@ const NewPostForm = () => {
       data.append("quartier", userData.quartier);
       if (file) data.append("file", file);
       data.append("video", video);
-
+      console.log('data',data);
       await dispatch(addPosts(data));
       dispatch(getPosts());
       cancelPost();

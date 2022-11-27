@@ -4,6 +4,17 @@ const User = require("../models/User");
 
 const getAllPlaintes = async (req, res) => {
   const plaintes = await Plainte.find();
+  // const plaintes = await Plainte.aggregate([
+  //   {
+  //     $lookup:
+  //     {
+  //       from:'User',
+  //       localfield: 'posterID',
+  //       foreignField: '-id',
+  //       as: 'userDetails'
+  //     }
+  //   }
+  // ])
   res.status(200).json({ plaintes });
 };
 
