@@ -53,7 +53,7 @@ export const likePost = (postId, userId) => {
     return axios({
       method: "patch",
       url: `${process.env.REACT_APP_API_URL}api/post/like-post/` + postId,
-      data: { id: userId },
+      data: { idLiker: userId },
     })
       .then((res) => {
         dispatch({ type: LIKE_POST, payload: { postId, userId } });
@@ -66,7 +66,7 @@ export const unlikePost = (postId, userId) => {
     return axios({
       method: "patch",
       url: `${process.env.REACT_APP_API_URL}api/post/unlike-post/` + postId,
-      data: { id: userId },
+      data: { idLiker: userId },
     })
       .then((res) => {
         dispatch({ type: UNLIKE_POST, payload: { postId, userId } });

@@ -25,7 +25,6 @@ const Card = ({ post }) => {
   };
 
   useEffect(() => {
-    console.log(usersData.users._id, post.image);
     isEmpty(usersData[0]) && setIsLoading(false);
   }, [usersData]);
 
@@ -62,7 +61,7 @@ const Card = ({ post }) => {
                     : null}
                 </h3>
                 {post.posterId !== userData._id && (
-                  <FollowHandler idToFollow={post.posterId} type="card" />
+                  <FollowHandler id={post.posterId} type="card" />
                 )}
               </div>
               <span> {dateParsers(post.createdAt)} </span>

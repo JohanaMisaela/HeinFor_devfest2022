@@ -30,12 +30,10 @@ const PostSchema = new mongoose.Schema(
     likers: {
       // si POST
       type: [String],
-      required: true,
     },
     followers: {
       // si event
       type: [String],
-      required: true,
     },
     comments: {
       type: [

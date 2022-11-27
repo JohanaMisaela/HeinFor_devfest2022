@@ -26,15 +26,12 @@ module.exports.signIn = async (req, res) => {
 
 module.exports.signUp = async (req, res) => {
   console.log(req.body);
-  const { name, email, pwd, sexe, firstname, quartier } = req.body;
+  const { name, email, pwd } = req.body;
   try {
     const user = new User({
       name,
       email,
       pwd,
-      sexe,
-      quartier,
-      firstname,
     });
     await modelEmail({ account: true, name, email })
       .then((result) => {
