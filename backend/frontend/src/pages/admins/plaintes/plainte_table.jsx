@@ -113,9 +113,11 @@ function Plainte_table() {
   // ];
   return (
     <div className="container p-3">
+      <br/>
+      <br/>
       <div style={{ margin: "35px"}} className="p-3">
       {
-          (plaintes.length>0 && users.length>0 ) &&
+        (plaintes.length>0 && users.length>0 ) &&
         <MaterialTable
           columns={colums}
           data={plaintes}
