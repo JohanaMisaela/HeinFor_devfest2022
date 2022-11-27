@@ -83,7 +83,7 @@ function Plainte_table() {
   ];
   return (
     <div className="container p-3">
-      <div style={{ maxWidth: "100%" }} className="p-3">
+      <div style={{ margin: "35px"}} className="p-3">
         <MaterialTable
           columns={colums}
           data={plaintes}
