@@ -2,10 +2,7 @@ body {
   background: #F9F8FD;
   font-family: "Lexend Exa", sans-serif;
 }
-#feuille{
-  background-image: url('./../../assets/forest.png');
-  background-size: cover;
-}
+
 nav {
   position: absolute;
   top: 15px;
@@ -16,9 +13,6 @@ nav {
   border-radius: 30px;
   -webkit-animation: slide-in 1s ease-out;
           animation: slide-in 1s ease-out;
-          margin-bottom: 50px;
-  box-shadow: #094b65;
-  background-color: #EBECF1;
 }
 
 ul {
@@ -39,7 +33,7 @@ ul li {
   transition: background 0.2s;
 }
 ul li a {
-  color: #094b65;
+  color: #2375D8;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -83,9 +77,7 @@ ul li:hover ul {
 ul li:hover ul li a {
   color: #F9F8FD;
 }
-.espace{
-  height: 100px;
-}
+
 @-webkit-keyframes slide-in {
   0% {
     top: -50px;
@@ -114,4 +106,4 @@ ul li:hover ul li a {
   100% {
     top: 15px;
   }
-}/*# sourceMappingURL=navbar.css.map */
+}/*# sourceMappingURL=Navbar.css.map */
