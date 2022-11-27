@@ -26,7 +26,8 @@ export const getPosts = (num) => {
     return axios
       .get(`${process.env.REACT_APP_API_URL}api/post/`)
       .then((res) => {
-        const array = res.data.slice(0, num);
+        // console.log("action", res);
+        const array = res.data.post.slice(0, num);
         dispatch({ type: GET_POSTS, payload: array });
         dispatch({ type: GET_ALL_POSTS, payload: res.data });
       });
@@ -52,7 +53,7 @@ export const likePost = (postId, userId) => {
     return axios({
       method: "patch",
       url: `${process.env.REACT_APP_API_URL}api/post/like-post/` + postId,
-      data: { id: userId },
+      data: { idLiker: userId },
     })
       .then((res) => {
         dispatch({ type: LIKE_POST, payload: { postId, userId } });
@@ -65,7 +66,7 @@ export const unlikePost = (postId, userId) => {
     return axios({
       method: "patch",
       url: `${process.env.REACT_APP_API_URL}api/post/unlike-post/` + postId,
-      data: { id: userId },
+      data: { idLiker: userId },
     })
       .then((res) => {
         dispatch({ type: UNLIKE_POST, payload: { postId, userId } });

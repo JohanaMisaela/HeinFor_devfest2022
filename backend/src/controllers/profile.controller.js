@@ -20,7 +20,7 @@ module.exports.uploadImage = async (req, res) => {
   const fileName = req.body.userName + ".jpg";
   try {
     await writeFile(
-      join(__dirname, "../../../frontend/public/images/profiles", fileName),
+      join(__dirname, "../../frontend/public/images/profiles", fileName),
       req.file.buffer
     );
   } catch (err) {

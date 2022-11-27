@@ -7,6 +7,8 @@ const {
   getOneUser,
   deleteUser,
   updateUser,
+  unfollow,
+  follow,
 } = require("../controllers/user.controller");
 
 router.get("/getUsers", getAllUsers);
@@ -18,5 +20,8 @@ router.post("/uploadImage", upload.single("file"), uploadImage);
 router.post("/signup", signUp);
 router.post("/login", signIn);
 router.get("/logout", logout);
+
+router.patch("/follow/:id", follow);
+router.patch("/unfollow/:id", unfollow);
 
 module.exports = router;

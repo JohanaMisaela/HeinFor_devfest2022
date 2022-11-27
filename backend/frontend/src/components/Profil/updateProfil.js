@@ -84,7 +84,7 @@ const UpdateProfil = () => {
                     return (
                       <li key={user._id}>
                         <img src={user.picture} alt="user-pic" />
-                        <h4> {user.pseudo} </h4>
+                        <h4> {user.name} </h4>
                         <div className="follow-handler">
                           <FollowHandler
                             idToFollow={user._id}

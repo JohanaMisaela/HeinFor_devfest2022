@@ -13,7 +13,6 @@ const UserSchema = new mongoose.Schema(
     },
     firstname: {
       type: String,
-      required: true,
       minLength: 3,
       maxLength: 55,
       trim: true,
@@ -38,6 +37,12 @@ const UserSchema = new mongoose.Schema(
       max: 1024,
       minlength: 6,
     },
+    followers: {
+      type: [String],
+    },
+    following: {
+      type: [String],
+    },
     picture: {
       type: String,
       default: "../../../frontend/public/images/profiles/noImage.png",
@@ -47,11 +52,9 @@ const UserSchema = new mongoose.Schema(
     },
     quartier: {
       type: String,
-      required: true,
     },
     sexe: {
       type: Boolean, //0=F, 1=M
-      required: true,
     },
     idBadge: {
       type: String,
