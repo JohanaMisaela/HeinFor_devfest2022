@@ -23,7 +23,9 @@
     width: 90%;
     text-align: center;
     margin: 0 auto;
-    padding: 20px;
+    margin-top : 100px;
+    justify-content:center;
+    allign-items:center;
     border-radius: 20px;
 
     @media screen and(max-width: 550px) {
@@ -33,6 +35,7 @@
     .form-container {
       display: grid;
       grid-template-columns: 30% 70%;
+      box-shadow: #094b65;
 
       @media screen and(max-width: 550px) {
         grid-template-columns: 1fr;
@@ -87,9 +90,18 @@
           font-size: 1.2rem;
           font-family: $font-2;
           border-radius: 20px;
+          background-color:$color-1;
 
           &:focus {
             box-shadow: 0 0 3px rgba(51, 51, 51, 0.2);
+          }
+        }
+        input[type="submit"] {
+          margin-top: 10px;
+          border-radius: 20px;
+          background: #094b65;
+          &:hover {
+            letter-spacing: 1px;
           }
         }
         a {
@@ -176,6 +188,7 @@
           transform: translate(-3px, -50%);
           cursor: pointer;
           padding: 10px 20px;
+          background: #094b65;
 
           @media screen and(max-width: 1121px) {
             opacity: 0;
@@ -184,7 +197,7 @@
         input[type="submit"] {
           margin-top: 10px;
           border-radius: 20px;
-
+          background: #094b65;
           &:hover {
             letter-spacing: 1px;
           }

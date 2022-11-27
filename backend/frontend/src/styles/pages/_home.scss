@@ -22,9 +22,21 @@
       text-align: center;
       
       .connection-form {
+        margin-top: 20%;
+        padding-bottom: 10%;
+        justify-content: center;
         background: $color-4;
         border-radius: 20px;
         padding: 20px;
+        background-color: #fff;
+	      border-radius: 10px;
+  	    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			      0 10px 10px rgba(0,0,0,0.22);
+	      position: relative;
+	      overflow: hidden;
+	      width: 768px;
+	      max-width: 100%;
+	      min-height: 480px;
 
         ul {
           display: flex;
@@ -39,7 +51,7 @@
             margin: 0 8px;
           }
           .active-btn {
-            background: $color-1;
+            background: $color-2;
   
             &:hover {
               background: $color-2;
@@ -58,7 +70,18 @@
             font-size: 1.2rem;
             font-family: $font-2;
             border-radius: 20px;
-  
+            box-shadow: #094b65;
+            background-color:$color-1;
+
+
+	/* background-repeat: no-repeat; */
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
             &:focus {
               box-shadow: 0 0 3px rgba(51, 51, 51, 0.2);
             }
@@ -66,6 +89,8 @@
           input[type=submit] {
             padding: 14px 14px;
             border-radius: 20px;
+            background: #094b65;
+
           }
         }
       }

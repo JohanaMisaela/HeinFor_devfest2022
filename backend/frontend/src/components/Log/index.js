@@ -24,7 +24,7 @@ const Log = (props) => {
             onClick={handleModals}
             id="register"
           >
-            S'inscrir
+            S'inscrire
           </li>
           <li
             className={SignInModal ? "active-btn" : null}
