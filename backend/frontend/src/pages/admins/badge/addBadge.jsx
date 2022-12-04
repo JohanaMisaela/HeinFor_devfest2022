@@ -56,20 +56,21 @@ const AddBadge = () => {
     }
   return (
     <><div className="mx-auto" style={{width: "700px"}}>
-          <form className="shadow p-3 mx-auto rounded" style={{ marginTop: '100px' }} onSubmit={handlesubmit}>
+          <form className="shadow p-3 mx-auto post-form rounded" style={{ marginTop: '100px' }} onSubmit={handlesubmit}>
               {/* <h2>Creation d'une badge({user.firstname})</h2> */}
               <label>Reboisement:</label>
               <input
+                  style={{ width: "30px"}}
                   type="number"
                   name="reboisement"
-                  className="form-control"
+                  className="post-form"
                   defaultValue={dataBadge.reboisement}
                   ref={reboisement} />
               <label>Recyclage:</label>
               <input
                   type="number"
                   name="recyclage"
-                  className="form-control"
+                  // className="form-control"
                   defaultValue={dataBadge.recyclage}
                   ref={recyclage}
                  />

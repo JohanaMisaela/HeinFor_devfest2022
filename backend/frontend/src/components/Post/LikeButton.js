@@ -30,24 +30,45 @@ const LikeButton = ({ post }) => {
   return (
     <div className="like-container">
       {uid === null && (
+        <>
+        { post.isPlainte ?
         <Popup
-          trigger={<img src="./img/icons/heart.svg" alt="like" />}
+          trigger={<img src="" alt="vote" />}
           position={["bottom center", "bottom right", "bottom left"]}
           closeOnDocumentClick
         >
-          <div> Connectez-vous pour aimez un post ! </div>
+        <div> Connectez-vous pour voter un sondage ! </div>
         </Popup>
+        :
+        <Popup
+        trigger={<img src="./img/icons/heart.svg" alt="like" />}
+        position={["bottom center", "bottom right", "bottom left"]}
+        closeOnDocumentClick
+      >
+      <div> Connectez-vous pour aimez un post ! </div>
+      </Popup>
+      }</>
+          
       )}
       {uid && liked === false && (
-        <img src="./img/icons/heart.svg" alt="like" onClick={like} />
+        <>
+        { post.isPlainte ? 
+          <img src="" alt="vote" onClick={like} /> : 
+          <img src="./img/icons/heart.svg" alt="like" onClick={like} />}
+        </>
       )}
       {uid && liked && (
         <>
+        { post.isPlainte ? 
           <img
+            alt="unvote"
+            onClick={unlike} />
+            : 
+            <img
             src="./img/icons/heart-filled.svg"
             alt="unlike"
-            onClick={unlike}
-          />
+            onClick={unlike} />
+          }
         </>
       )}
       <span> {post.likers ? post.likers.length : 0} </span>

@@ -47,6 +47,10 @@ const tableIcons = {
 
 function Plainte_table() {
   const link = "http://localhost:5000/api/plainte/";
+  const userLink = "http://localhost:5000/api/user/getUsers";
+  const [loadingPlaintes, setLoadingPlaintes] = useState(false);
+  const [loadingUsers, setLoadingUsers] = useState(false);
+  const [users, setUsers] = useState([]);
   const [plaintes, setPlaintes] = useState([]);
   const getPlainte = async () => {
     axios.get(link).then((res) => {
@@ -54,36 +58,66 @@ function Plainte_table() {
       console.log(res.data.plaintes);
     });
   };
+  const getUsers = async () => {
+    axios.get(userLink).then((res) => {
+      setUsers(res.data.users);
+      console.log(res.data.users);
+    });
+  };
+
   useEffect(() => {
-    getPlainte();
+    setLoadingUsers(true)    
+    setLoadingPlaintes(true)
+
+    setTimeout(() => {
+      getUsers();
+    }, 2000);
+        
+    setTimeout(() => {
+      getPlainte();
+    }, 2000);
   }, []);
+
   const colums = [
-    { title: "Nom", field: "nom" },
+    { title: "Nom", render:(rowData)=> 
+    <div>{users.filter(user => user._id === rowData.posterId)[0].name}</div> , 
+    customFilterAndSearch: (value, rowData) => 
+    {
+      return true; // customize here according your search algorithm.
+    }},
     { title: "Quartier", field: "quartier" },
     { title: "Informations", field: "text" },
-    { title: "Type", field: "type" },
+    // { title: "Type", field: "type" },
+    { title: "Vote", render:(rowData)=><div>{rowData.voters.length}</div>,
+     customFilterAndSearch: (value, rowData) => {
+      return true; // customize here according your search algorithm.
+   } },
     { title: "Date", field: "createdAt" },
   ];
 
-  const data = [
-    {
-      nom: "Gatera",
-      date: "2022-11-11",
-      quartier: "Ambohimanarina",
-      text: "Ny aty aminay dia maloto be fona isanandro",
-      type: "Polution de la terre",
-    },
-    {
-      nom: "Mario",
-      date: "2022-07-07",
-      quartier: "Antrano",
-      text: "Tokony anary po ny olona fa maloto be",
-      type: "Polution de l'air",
-    },
-  ];
+  // const data = [
+  //   {
+  //     nom: "Gatera",
+  //     date: "2022-11-11",
+  //     quartier: "Ambohimanarina",
+  //     text: "Ny aty aminay dia maloto be fona isanandro",
+  //     // type: "Polution de la terre",
+  //   },
+  //   {
+  //     nom: "Mario",
+  //     date: "2022-07-07",
+  //     quartier: "Antrano",
+  //     text: "Tokony anary po ny olona fa maloto be",
+  //     // type: "Polution de l'air",
+  //   },
+  // ];
   return (
     <div className="container p-3">
-      <div style={{ maxWidth: "100%" }} className="p-3">
+      <br/>
+      
+      <div style={{ margin: "35px"}} className="p-3">
+      {
+          (plaintes.length>0 && users.length>0 ) &&
         <MaterialTable
           columns={colums}
           data={plaintes}
@@ -98,7 +132,7 @@ function Plainte_table() {
             filtering: true,
             exportButton: true,
             headerStyle: {
-              backgroundColor: "green",
+              backgroundColor: "#094b65",
               color: "#FFF",
               fontSize: "17px",
               textAlign: "center",
@@ -110,7 +144,13 @@ function Plainte_table() {
             },
           }}
         />
+        
+        }
+        {
+          plaintes.length === 0  && 'Loading...'
+        }
       </div>
+      <a  href="complaints/add">Ajouter</a>
     </div>
   );
 }

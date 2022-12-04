@@ -8,6 +8,7 @@ import wa from "./../styles/assets/img/water.png";
 import { UidContext } from "./../components/appContext";
 import { useSelector } from "react-redux";
 import React, { useContext } from "react";
+import Carousel from "../components/carousel/Carousel";
 
 
 function Acceuil() {
@@ -77,7 +78,7 @@ function Acceuil() {
           Et seulement nous peuvent y remedier <b> Agisons ensemble
             </b><br/><h1>Changeons le monde!</h1>
         </p>
-          
+          <Carousel />
         </div>
       </div>
     </>
