@@ -99,13 +99,13 @@ module.exports.likePost = async (req, res) => {
     await Post.findByIdAndUpdate(
       req.params.id,
       {
-        $addToSet: { likers: req.body.idLikerLiker },
+        $addToSet: { likers: req.body.idLiker },
       },
       { new: true }
     ).catch((err) => res.status(400).send(err));
 
     await User.findByIdAndUpdate(
-      req.body.idLikerLiker,
+      req.body.idLiker,
       {
         $addToSet: { likes: req.params.id },
       },

@@ -6,6 +6,7 @@ import LikeButton from "./LikeButton";
 import { updatePost } from "../../actions/post.action";
 import DeleteCard from "./DeleteCard";
 import CardComments from "./CardComments";
+import VoteButton from "./VoteBtn";
 
 const Card = ({ post }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -128,7 +129,7 @@ const Card = ({ post }) => {
                 {!post.isPlainte ? (
                   <LikeButton post={post} />
                 ) : (
-                  <input type="radio" value={() => setbol(!bol)} />
+                  <VoteButton post={post}/>
                 )}
                 <img src="./img/icons/share.svg" alt="share " />
               </div>

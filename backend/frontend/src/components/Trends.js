@@ -11,7 +11,7 @@ const Trends = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!isEmpty(posts[0])) {
+    if (!isEmpty(posts.post)) {
       const postArray = Object.keys(posts).map((i) => posts[i]);
       let sortedArray = postArray.sort((a, b) => {
         return b.likers.length - a.likers.length;
@@ -19,19 +19,22 @@ const Trends = () => {
       sortedArray.length = 3;
       dispatch(getTrends(sortedArray));
     }
+    console.log(trendList[0]);
+
   }, [posts, dispatch]);
 
   return (
-    <div className="trending-container">
+    <div className="trending-container" style={{backgroundColor:"#FFF"}}>
       <h4>Trending</h4>
       <NavLink to="/trending">
         <ul>
           {trendList.length &&
-            trendList.map((post) => {
+            trendList[0].map((post) => {
+              
               return (
                 <li key={post._id}>
                   <div>
-                    {post.picture && <img src={post.picture} alt="post-pic" />}
+                    {post.image && <img src={post.image} alt="post-pic" />}
                     {post.video && (
                       <iframe
                         src={post.video}
@@ -41,7 +44,7 @@ const Trends = () => {
                         title={post._id}
                       ></iframe>
                     )}
-                    {isEmpty(post.picture) && isEmpty(post.video) && (
+                    {isEmpty(post.image) && isEmpty(post.video) && (
                       <img
                         src={
                           isEmpty(usersData[0])
@@ -59,7 +62,7 @@ const Trends = () => {
                     )}
                   </div>
                   <div className="trend-content">
-                    <p> {post.message} </p>
+                    <p> {post.text} </p>
                     <span>Lire</span>
                   </div>
                 </li>
